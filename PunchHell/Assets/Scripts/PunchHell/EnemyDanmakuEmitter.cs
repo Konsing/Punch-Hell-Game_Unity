@@ -25,11 +25,7 @@ public class DanmakuEmitter : DanmakuBehaviour
     DanmakuConfig config;
     IFireable fireable;
 
-    /// <summary>
-    /// Start is called on the frame when a script is enabled just before
-    /// any of the Update methods is called the first time.
-    /// </summary>
-    void Start()
+    void Awake()
     {
         if (DanmakuType == null)
         {
@@ -46,7 +42,12 @@ public class DanmakuEmitter : DanmakuBehaviour
     /// </summary>
     void Update()
     {
-        if (fireable == null) return;
+        if (fireable == null) 
+            return;
+
+        if (!DanmakuManager.Instance.Bounds.Contains(transform.position))
+            return;
+
         var deltaTime = Time.deltaTime;
         if (FrameRate > 0)
         {

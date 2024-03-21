@@ -31,7 +31,6 @@ public class Waypoint : IWaypoint
         float x = camBounds.min.x + (camBounds.max.x - camBounds.min.x) * xp / 100.0f;
         float y = camBounds.min.y + (camBounds.max.y - camBounds.min.y) * yp / 100.0f;
 
-        Debug.Log($"Waypoint: {x}, {y}; Camera Bounds: [{camBounds.min}], [{camBounds.max}]");
         return new Waypoint(moveToSpeed, new Vector3(x, y, z), timeStationary);
     }
 }
