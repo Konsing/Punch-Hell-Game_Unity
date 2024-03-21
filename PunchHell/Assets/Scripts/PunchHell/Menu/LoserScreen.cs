@@ -25,4 +25,9 @@ public class LoserScreen : MonoBehaviour
         SceneManager.LoadSceneAsync("TitleScreen");
         StageManager.Instance.Paused = false;
     }
+
+    public void onRestartClicked()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }
