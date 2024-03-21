@@ -145,7 +145,7 @@ GameObject:
   - component: {fileID: 5128077006076410948}
   - component: {fileID: 1844092303838845346}
   m_Layer: 5
-  m_Name: Pause Prefab
+  m_Name: GameBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

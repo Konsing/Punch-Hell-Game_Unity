@@ -19,14 +19,4 @@ public class DialogueBoxController : MonoBehaviour
     {
         transform.Find("DialogueText").GetComponent<Text>().text = text;
     }
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
 }

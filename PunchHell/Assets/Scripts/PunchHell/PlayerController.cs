@@ -77,6 +77,9 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+            StageManager.Instance.Paused = !StageManager.Instance.Paused;
+
         invincibilityRemaining = Mathf.Max(0.0f, invincibilityRemaining -= Time.deltaTime);
 
         var slowMove = Input.GetButton("Fire2");

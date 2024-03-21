@@ -2,27 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
-    [SerializeField] GameObject pauseMenu;
+    [SerializeField]
+    private Button quitButton;
 
-    public void Pause() 
+    void Awake()
     {
-        pauseMenu.SetActive(true);
-        Time.timeScale = 0;
+        quitButton.onClick.AddListener(OnQuitClicked);
     }
 
-    public void Resume()
+    public void OnQuitClicked()
     {
-        pauseMenu.SetActive(false);
-        Time.timeScale = 1;
+        Debug.Log("Quit clicked");
+        SceneManager.LoadSceneAsync("TitleScreen");
+        StageManager.Instance.Paused = false;
     }
-
-    public void ExitMenu()
-    {
-        SceneManager.LoadScene(0);
-        Time.timeScale = 1;
-    }
-
 }
