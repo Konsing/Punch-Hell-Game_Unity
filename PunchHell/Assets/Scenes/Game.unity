@@ -455,11 +455,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveToSpeed: 900
   timeStationary: 1
---- !u!1 &1157893551 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 950580006922901639, guid: fcb745006e7eb074aafcdd05093b4bc1, type: 3}
-  m_PrefabInstance: {fileID: 3414326161109113930}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1253449089
 GameObject:
   m_ObjectHideFlags: 0
@@ -804,22 +799,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6002982081270001664, guid: fcb745006e7eb074aafcdd05093b4bc1, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1157893551}
-    - target: {fileID: 6002982081270001664, guid: fcb745006e7eb074aafcdd05093b4bc1, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6002982081270001664, guid: fcb745006e7eb074aafcdd05093b4bc1, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6510854279049361325, guid: fcb745006e7eb074aafcdd05093b4bc1, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7213546256854184927, guid: fcb745006e7eb074aafcdd05093b4bc1, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -916,10 +895,6 @@ PrefabInstance:
     - target: {fileID: 4684856301081426990, guid: c08820031d375934ba9a769b30fa138e, type: 3}
       propertyPath: m_Name
       value: LoserScreen
-      objectReference: {fileID: 0}
-    - target: {fileID: 4684856301081426990, guid: c08820031d375934ba9a769b30fa138e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6123675960712261713, guid: c08820031d375934ba9a769b30fa138e, type: 3}
       propertyPath: m_Pivot.x
