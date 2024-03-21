@@ -85,10 +85,10 @@ Projectile movement is done through the DanmakU library, which provides easy cre
 ## Animation and Visuals - Jack Sangiamputtakoon
 
 **List your assets, including their sources and licenses.**
-https://www.layer.ai/
+[Layer AI](https://www.layer.ai/)
 **Describe how your work intersects with game feel, graphic design, and world-building. Include your visual style guide if one exists.**
 
-Since our game was inspired by 80s asthetics, I wanted to create a neon pixelated 80s look. The pixelated 8-bit art style was for both simplicity and was in line with the game feel. Since I am not an artist I used AI image generation to create a backbone of my work, which I then edited in Krita, an image editing software. 
+Since our game was inspired by 80s asthetics, I wanted to create a neon pixelated 80s look. The pixelated 16-bit art style was for both simplicity and was in line with the game feel. Since I am not an artist I used AI image generation to create a backbone of my work, which I then edited in Krita, an image editing software. I often used references that Zach, the gameplay designer outlined which I then implemented. [Here you can see Zach drawing up the health system](Screenshot 2024-03-11 152629.png) [which I then imlplemented](health_half.png)
 
 ## Game Logic
 
