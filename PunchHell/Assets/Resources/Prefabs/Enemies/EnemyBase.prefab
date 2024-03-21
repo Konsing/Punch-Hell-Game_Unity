@@ -105,10 +105,10 @@ MonoBehaviour:
   powerPrefab: {fileID: 2445724203549336688, guid: d68635aa85714604081ab68b432a16a3, type: 3}
   pointPrefab: {fileID: 4769289223948220687, guid: 34ba46bac4d2bac4faa0d16481b9494d, type: 3}
   bulletPointPrefab: {fileID: 4769289223948220687, guid: 8019d65f3c15bf441a10daaad98a1455, type: 3}
-  health: 250
-  scoreValue: 10
-  hasPointDrop: 1
-  hasPowerDrop: 0
+  health: 210
+  scoreValue: 20
+  hasPointDrop: 0
+  hasPowerDrop: 1
 --- !u!198 &4649166780931431690
 ParticleSystem:
   m_ObjectHideFlags: 0
