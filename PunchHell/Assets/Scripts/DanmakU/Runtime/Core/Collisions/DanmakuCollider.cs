@@ -131,8 +131,8 @@ public class DanmakuCollider : MonoBehaviour {
   }
 
   internal static void FlushAll() {
-    foreach (var collider in Colliders) {
-      collider.Flush();
+    for (int i = ColliderCount - 1; i >= 0; i--) {
+      Colliders[i].Flush();
     }
   }
 
