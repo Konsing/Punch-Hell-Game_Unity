@@ -1,4 +1,4 @@
-# PunchHell #
+![PunchHell logo](https://raw.githubusercontent.com/Konsing/ECS-179-Final-Project/main/PunchHell/Assets/Resources/Sprites/UI/PunchHell.png)
 
 ## Summary ##
 
