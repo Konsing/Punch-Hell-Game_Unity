@@ -99,7 +99,7 @@ which I then implemented
 
 Other times I took more liberty with Zach's outlines. 
 
-![](ExampleImages/Player (low health).png) ![](PunchHell/Assets/Resources/Sprites/Protag_low_health.png)
+![](ExampleImages/Player_low_health.png) ![](PunchHell/Assets/Resources/Sprites/Protag_low_health.png)
 
 Of course, most of the time the generated images did not turn out perfectly
 
