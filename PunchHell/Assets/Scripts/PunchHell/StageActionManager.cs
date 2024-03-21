@@ -54,7 +54,7 @@ public class StageActionManager : MonoBehaviour
 {
     private List<StageAction> actions;
     private GameObject metricsCluster;
-    private Coroutine queueProcessingCoroutine;
+    private Coroutine queueProcessingCoroutine = null;
     private int currentAction = 0;
 
     IEnumerator ActionQueueCoroutine()

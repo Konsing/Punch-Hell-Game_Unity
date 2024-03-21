@@ -32,6 +32,7 @@ public class VictoryScreen : MonoBehaviour
     public void OnQuitClicked()
     {
         SceneManager.LoadSceneAsync("TitleScreen");
+        StageManager.Instance.ResetStageValues();
         StageManager.Instance.Paused = false;
     }
 
@@ -40,14 +41,12 @@ public class VictoryScreen : MonoBehaviour
         gameObject.SetActive(false);
 
         // Reset stage values to their initial state
-        StageManager.Instance.ResetStageValues();
+        //StageManager.Instance.ResetStageValues();
     
         // Stop the current stage actions if any are running
-        StageManager.Instance.ActionManager.StopStage();
+        //StageManager.Instance.ActionManager.StopStage();
     
         // Get the current level's actions and begin the stage again
-        int currentLevel = StageManager.Instance.Level;
-        StageManager.Instance.ActionManager.SetActions(StageDefinitions.GetLevelDefinition(currentLevel));
-        StageManager.Instance.ActionManager.BeginStage();
+        StageManager.Instance.Level = StageManager.Instance.Level;
     }
 }

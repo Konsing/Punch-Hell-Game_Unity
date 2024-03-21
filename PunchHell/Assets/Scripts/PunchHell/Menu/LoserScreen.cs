@@ -23,6 +23,7 @@ public class LoserScreen : MonoBehaviour
     public void OnQuitClicked()
     {
         SceneManager.LoadSceneAsync("TitleScreen");
+        StageManager.Instance.ResetStageValues();
         StageManager.Instance.Paused = false;
     }
 
@@ -33,18 +34,6 @@ public class LoserScreen : MonoBehaviour
         // Stop any current stage actions
         StageManager.Instance.ActionManager.StopStage();
     
-        // Destroy all existing enemies
-        foreach (var enemy in GameObject.FindGameObjectsWithTag("Enemy"))
-        {
-            Destroy(enemy);
-        }
-    
-        // Reset stage values to their initial state
-        StageManager.Instance.ResetStageValues();
-    
-        // Get the current level's actions and begin the stage again
-        int currentLevel = StageManager.Instance.Level;
-        StageManager.Instance.ActionManager.SetActions(StageDefinitions.GetLevelDefinition(currentLevel));
-        StageManager.Instance.ActionManager.BeginStage();
+        StageManager.Instance.Level = StageManager.Instance.Level;
     }
 }
