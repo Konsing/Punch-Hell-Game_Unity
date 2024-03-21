@@ -107,6 +107,45 @@ The two important singletons used in the game are the StageManager singleton, ac
 
 **Design Patterns** - Design patterns happened to be mentioned tons in this course, and as described previously, some wered used in the development of the game logic. Notably, the use of singletons in [PlayerController](https://github.com/Konsing/ECS-179-Final-Project/blob/main/PunchHell/Assets/Scripts/PunchHell/PlayerController.cs) and [StageManager](https://github.com/Konsing/ECS-179-Final-Project/blob/main/PunchHell/Assets/Scripts/PunchHell/StageManager.cs), the use of the C# equivalent of a tagged enum achieved through inheritance in [StageActionManager](https://github.com/Konsing/ECS-179-Final-Project/blob/main/PunchHell/Assets/Scripts/PunchHell/StageActionManager.cs) and the idea of an "action queue" handled asynchronously. An interface was also used to define [Waypoints](https://github.com/Konsing/ECS-179-Final-Project/blob/main/PunchHell/Assets/Scripts/PunchHell/Waypoint/IWaypoint.cs) to allow for two concrete implementations: a WaypointObject editable in the Unity Editor for quick testing, and a Waypoint data class used to instantiate waypoints in code. The limitations of Unity are apparent here in not being able to select a dataclass as an IWaypoint. We also made use of the Event/Observer design pattern [as consumers](https://github.com/Konsing/ECS-179-Final-Project/blob/main/PunchHell/Assets/Scripts/PunchHell/GrazeHitboxController.cs) of a library that implemented them.
 
+*What I wanted to do, but couldn't (due to time constraints imposed by my own procrastination and laziness)* - To script the stage, that is, to decide which enemies to spawn, where they move, what they fire, when they spawn and the dialogue interactions in between, I was going to develop a **Domain Specific Language** that would allow one to easily create a reloadable sequence of actions that script the stage without having to keep it all in C# code, which as you may be aware of, causes Unity engine to RELOAD DOMAIN.... COMPLETING DOMAIN.... every time it is changed, which was a signifigant annoyance during development. Such a DSL would look like this:
+
+```
+DialogueAction("Name", "Some dialogue")
+SpawnEnemy(EnemyA, (400, 1320), Waypoints1)
+Wait(1)
+SpawnEnemyWave(EnemyA, (400, 1320), Waypoints2)
+```
+or similar. What we have is this in C#:
+```
+private static List<StageAction> GetLevel1()
+    {
+        var enemyAWaypoints = new List<IWaypoint>
+        {
+                Waypoint.FromCameraPercent(250, 90.0f, 90.0f),
+                Waypoint.FromCameraPercent(250, 75.0f, 90.0f),
+                Waypoint.FromCameraPercent(250, 40.0f, 70.0f),
+                Waypoint.FromCameraPercent(250, 20.0f, 60.0f),
+                Waypoint.FromCameraPercent(250, 50.0f, 65.0f)
+        };
+
+        return new List<StageAction>
+        {
+                new StageActionSpawn("Enemies/EnemyBase", new Vector3(640, 720, 0)),
+                new StageActionDialogue("Player", "I am so sick and tired of this shit"),
+                new StageActionDialogue("Enemy", "Me too dude"),
+                new StageActionDelay(5.0f),
+                new StageActionSpawn("Enemies/EnemyA", new Vector3(1100, 1100, 0), enemyAWaypoints),
+                new StageActionDelay(2.5f),
+                new StageActionSpawn("Enemies/EnemyA", new Vector3(1100, 1100, 0), enemyAWaypoints),
+                new StageActionDelay(2.5f),
+                new StageActionSpawn("Enemies/EnemyA", new Vector3(1100, 1100, 0), enemyAWaypoints),
+                new StageActionDelay(2.5f),
+                new StageActionWaitForClear()
+        };
+    }
+```
+which is similar but does not provide the brief convenience and reloadability of a script written in a DSL designed for bullet hell games. I also wanted to create an editor tool that would allow a developer to drag along the screen to define a list of waypoints instead of painstakingly entering them in one by one into a list.
+
 # Sub-Roles
 
 ## Audio
