@@ -14,7 +14,7 @@ public class LevelMenu : MonoBehaviour
 
         for (int i = 0; i < buttons.Length; i++)
         {
-            buttons[i]. = false;
+            buttons[i].interactable = false;
         }
 
         for (int i = 0; i < unlockedLevel; i++)
