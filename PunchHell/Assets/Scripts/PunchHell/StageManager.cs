@@ -18,6 +18,8 @@ public class StageManager : MonoBehaviour
             actionManager.StopStage();
             actionManager.SetActions(StageDefinitions.GetLevelDefinition(value));
             currentLevel = value;
+            FindFirstObjectByType<PauseMenu>(FindObjectsInactive.Include)
+                .GetComponentInChildren<Text>().text = $"Stage {currentLevel}";
         }
     }
 
@@ -32,6 +34,7 @@ public class StageManager : MonoBehaviour
         get => dialogueActive || paused; 
         set
         {
+            FindFirstObjectByType<PauseMenu>(FindObjectsInactive.Include).gameObject.SetActive(value);
             var isPaused = value || dialogueActive;
             Time.timeScale = isPaused ? 0.0f : 1.0f;
             paused = value;
