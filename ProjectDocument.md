@@ -82,11 +82,13 @@ Projectile movement is done through the DanmakU library, which provides easy cre
 
 **Game Engines and Abstraction, Third-Party Code** - It would be pretty difficult to write a game completely from scratch handling all aspects of the game such as physics, audio, rendering, and math. This class teaches that it is useful and easy to use game engines and make use of abstractions, perhaps made by somebody else, to save time on game development. We considered using a "Danmaku Engine" called "danmokou" built on top of Unity that would set up a scene and handle a lot of the bullet hell base for us, but decided that it did too much. Thus, we resorted to using the "DanmakU" library, which makes generating projectiles in patterns easier and performant due to its use of the Unity Jobs system and close-to-native code. This is an example of an abstraction and/or component of a game engine being put to use. Think about the flaming circles students would have to jump through if not allowed the use of a game engine or third party code in completing this project. Although, we did experience some issues with the buginess and issues encountered when using DanmakU, which is a reminder of one of the tradeoffs of not rolling it yourself. [DanmakU's inclusion in our project](https://github.com/Konsing/ECS-179-Final-Project/tree/main/PunchHell/Assets/Scripts/DanmakU/Runtime). [DanmakU library on GitHub](https://github.com/james7132/DanmakU)
 
-## Animation and Visuals
+## Animation and Visuals - Jack Sangiamputtakoon
 
 **List your assets, including their sources and licenses.**
-
+https://www.layer.ai/
 **Describe how your work intersects with game feel, graphic design, and world-building. Include your visual style guide if one exists.**
+
+Since our game was inspired by 80s asthetics, I wanted to create a neon pixelated 80s look. The pixelated 8-bit art style was for both simplicity and was in line with the game feel. Since I am not an artist I used AI image generation to create a backbone of my work, which I then edited in Krita, an image editing software. 
 
 ## Game Logic
 
