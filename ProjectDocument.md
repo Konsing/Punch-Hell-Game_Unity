@@ -27,6 +27,8 @@ The player is able to move with directional keys as input. That is, movement is 
 
 And as in many other bullet hell games, there are also gameplay elements which change how the player moves and interacts with the game. These gameplay elements, and their corresponding input keys, are enumerated as follows:
 
+- *Player Shoot*; Input: Fire1/LClick. The player can fire projectiles from a turret. There can be multiple turrets, as later described in the Score section. Player bullets damage enemy units, which have a limited amount of health.
+
 - *Score*. A score counter is displayed on the bottom left corner of the screen, and increases under the following conditions: an enemy is killed (and subsequently having their on-screen bullets converted to a point drop), a bullet is grazed, a blue point drop is collected.
 
 - *Power*. The player has one stream of projectiles at the beginning of the stage. Two additional "turrets" can be acquired by the player through collecting red power ups, which some enemies drop. The power ups fill the meter, and when the power meter is full, another turret is spawned, up to a maximum of 3.
