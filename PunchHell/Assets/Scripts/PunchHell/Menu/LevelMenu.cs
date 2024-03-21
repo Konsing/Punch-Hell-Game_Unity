@@ -10,7 +10,7 @@ public class LevelMenu : MonoBehaviour
 
     private void Awake()
     {
-        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
+        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 2);
 
         for (int i = 0; i < buttons.Length; i++)
         {
@@ -24,6 +24,7 @@ public class LevelMenu : MonoBehaviour
     }
     public void OpenLevel(int levelId)
     {
-        SceneManager.LoadSceneAsync("Game");
+        PlayerPrefs.SetInt("CurrentLevel", levelId);
+        SceneManager.LoadSceneAsync(levelId);
     }
 }
