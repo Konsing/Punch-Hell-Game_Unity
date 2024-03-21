@@ -315,6 +315,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5240581834379997633, guid: c9f5207f7744a084f9306c34287f9f22, type: 3}
+      propertyPath: Speed._max
+      value: 945
+      objectReference: {fileID: 0}
+    - target: {fileID: 5240581834379997633, guid: c9f5207f7744a084f9306c34287f9f22, type: 3}
+      propertyPath: Speed._min
+      value: 945
+      objectReference: {fileID: 0}
     - target: {fileID: 5650753998705063536, guid: c9f5207f7744a084f9306c34287f9f22, type: 3}
       propertyPath: Sprite
       value: 
@@ -327,9 +335,29 @@ PrefabInstance:
       propertyPath: ColliderRadius
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5650753998705063536, guid: c9f5207f7744a084f9306c34287f9f22, type: 3}
+      propertyPath: DefaultPoolSize
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 5679308787121236328, guid: c9f5207f7744a084f9306c34287f9f22, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5992998237267544401, guid: c9f5207f7744a084f9306c34287f9f22, type: 3}
+      propertyPath: Speed._max
+      value: 945
+      objectReference: {fileID: 0}
+    - target: {fileID: 5992998237267544401, guid: c9f5207f7744a084f9306c34287f9f22, type: 3}
+      propertyPath: Speed._min
+      value: 945
+      objectReference: {fileID: 0}
+    - target: {fileID: 6831626725199780295, guid: c9f5207f7744a084f9306c34287f9f22, type: 3}
+      propertyPath: Speed._max
+      value: 945
+      objectReference: {fileID: 0}
+    - target: {fileID: 6831626725199780295, guid: c9f5207f7744a084f9306c34287f9f22, type: 3}
+      propertyPath: Speed._min
+      value: 945
       objectReference: {fileID: 0}
     - target: {fileID: 7821611186926871791, guid: c9f5207f7744a084f9306c34287f9f22, type: 3}
       propertyPath: m_IsActive
@@ -896,6 +924,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LoserScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 4684856301081426990, guid: c08820031d375934ba9a769b30fa138e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6123675960712261713, guid: c08820031d375934ba9a769b30fa138e, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1077,17 +1109,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUD
       objectReference: {fileID: 0}
-    - target: {fileID: 8875271088607031480, guid: 5161f9197b74a0447ba899456069d88e, type: 3}
-      propertyPath: m_Type
-      value: 3
+    - target: {fileID: 6562291300968126153, guid: 5161f9197b74a0447ba899456069d88e, type: 3}
+      propertyPath: m_Name
+      value: LifeBar
       objectReference: {fileID: 0}
-    - target: {fileID: 8875271088607031480, guid: 5161f9197b74a0447ba899456069d88e, type: 3}
-      propertyPath: m_FillAmount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8875271088607031480, guid: 5161f9197b74a0447ba899456069d88e, type: 3}
-      propertyPath: m_FillMethod
-      value: 0
+    - target: {fileID: 8601865878517393190, guid: 5161f9197b74a0447ba899456069d88e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 340
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

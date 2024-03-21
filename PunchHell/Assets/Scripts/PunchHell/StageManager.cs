@@ -11,6 +11,8 @@ public class StageManager : MonoBehaviour
     public static StageManager Instance { get; private set; }
     public StageActionManager ActionManager { get => actionManager; }
     private StageActionManager actionManager;
+    private LifeBar lifeBar;
+
     private bool paused = false;
     private bool dialogueActive = false;
     private int currentLevel = 1;
@@ -72,6 +74,7 @@ public class StageManager : MonoBehaviour
             }
 
             livesRemaining = value;
+            lifeBar.SetHeartsVisible(livesRemaining);
 
             if (livesRemaining <= 0)
             {
@@ -115,7 +118,7 @@ public class StageManager : MonoBehaviour
 
     public void ResetStageValues()
     {
-        livesRemaining = maxLives;
+        LivesRemaining = maxLives;
         score = 0;
         power = 0;
         rollLevel = 0;
@@ -127,6 +130,7 @@ public class StageManager : MonoBehaviour
     void Start()
     {
         Instance = this;
+        lifeBar = FindFirstObjectByType<LifeBar>(FindObjectsInactive.Include);
 
         ResetStageValues();
         actionManager = GetComponent<StageActionManager>();
