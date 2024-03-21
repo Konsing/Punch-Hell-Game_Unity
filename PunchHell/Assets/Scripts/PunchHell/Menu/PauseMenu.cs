@@ -18,6 +18,7 @@ public class PauseMenu : MonoBehaviour
     {
         Debug.Log("Quit clicked");
         SceneManager.LoadSceneAsync("TitleScreen");
+        StageManager.Instance.ResetStageValues();
         StageManager.Instance.Paused = false;
     }
 }

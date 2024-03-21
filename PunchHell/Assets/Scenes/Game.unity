@@ -606,8 +606,20 @@ PrefabInstance:
       value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 6799362553384712358, guid: c9f5207f7744a084f9306c34287f9f22, type: 3}
+      propertyPath: grazeCooldown
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 6799362553384712358, guid: c9f5207f7744a084f9306c34287f9f22, type: 3}
       propertyPath: rollMoveSpeed
       value: 420
+      objectReference: {fileID: 0}
+    - target: {fileID: 6799362553384712358, guid: c9f5207f7744a084f9306c34287f9f22, type: 3}
+      propertyPath: scoreAddedByGraze
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6799362553384712358, guid: c9f5207f7744a084f9306c34287f9f22, type: 3}
+      propertyPath: invincibilityTimeAfterDeath
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6831626725199780295, guid: c9f5207f7744a084f9306c34287f9f22, type: 3}
       propertyPath: Speed._max

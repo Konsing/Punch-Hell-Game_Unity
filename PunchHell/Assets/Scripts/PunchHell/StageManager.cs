@@ -82,6 +82,10 @@ public class StageManager : MonoBehaviour
                 PlayerController.Instance.gameObject.SetActive(false);
                 FindFirstObjectByType<LoserScreen>(FindObjectsInactive.Include).gameObject.SetActive(true);
             }
+            else
+            {
+                PlayerController.Instance.gameObject.SetActive(true);
+            }
         }
     }
 
@@ -127,9 +131,9 @@ public class StageManager : MonoBehaviour
     public void ResetStageValues()
     {
         LivesRemaining = maxLives;
-        score = 0;
-        power = 0;
-        rollLevel = 0;
+        AddScore(-score);
+        AddPower(-power);
+        AddRoll(-rollLevel);
         powerLevel = 1;
         PlayerController.Instance.gameObject.SetActive(true);
         PlayerController.Instance.transform.position = new Vector3(640, 400, 0);
@@ -139,10 +143,18 @@ public class StageManager : MonoBehaviour
     {
         Instance = this;
         lifeBar = FindFirstObjectByType<LifeBar>(FindObjectsInactive.Include);
-
-        currentLevel = PlayerPrefs.GetInt("CurrentLevel", 1);
-        ResetStageValues();
         actionManager = GetComponent<StageActionManager>();
+        var prefLevel = PlayerPrefs.GetInt("CurrentLevel", 1);
+        
+        // fix
+        if (prefLevel < 1 || prefLevel > 2)
+        {
+            prefLevel = 1;
+            PlayerPrefs.SetInt("CurrentLevel", 1);
+        }
+
+        currentLevel = prefLevel;
+        livesRemaining = maxLives;
         actionManager.SetActions(StageDefinitions.GetLevelDefinition(currentLevel));
         actionManager.BeginStage();
     }
