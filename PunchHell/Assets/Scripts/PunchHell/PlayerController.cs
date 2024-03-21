@@ -9,13 +9,17 @@ public class PlayerController : MonoBehaviour
     public static PlayerController Instance { get; private set; }
 
     [SerializeField]
-    private float moveSpeed = 256.0f;
+    private float moveSpeed = 360.0f;
     [SerializeField]
-    private float slowMoveSpeed = 64.0f;
+    private float slowMoveSpeed = 160.0f;
+    [SerializeField]
+    private float rollMoveSpeed = 420f;
     [SerializeField]
     private float grazeCooldown = 0.02f;
     [SerializeField]
     private float invincibilityTimeAfterDeath = 2.0f;
+    [SerializeField]
+    private float rollTimeMax = 1.5f;
     [SerializeField]
     private int powerAddedByPowerup = 10;
     [SerializeField]
@@ -25,13 +29,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private int scoreAddedByGraze = 1;
 
-
-
     private PlayerDanmakuEmitter[] bulletEmitters;
     private SpriteRenderer[] sprites;
+    private Transform rollSprite;
     private Coroutine flashSpriteCoroutine;
     private float invincibilityRemaining = 0.0f;
     private float lastGraze = 0.0f;
+    private float rollTimeRemaining = 0.0f;
 
     IEnumerator FlashSpriteCoroutine()
     {
@@ -82,6 +86,7 @@ public class PlayerController : MonoBehaviour
     {
         Instance = this;
 
+        rollSprite = transform.Find("RollPipe");
         bulletEmitters = GetComponentsInChildren<PlayerDanmakuEmitter>(true);
         sprites = GetComponentsInChildren<SpriteRenderer>(true);
     }
@@ -91,13 +96,32 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) && !StageManager.Instance.DialogueActive)
             StageManager.Instance.Paused = !StageManager.Instance.Paused;
 
+        if (Input.GetKeyDown(KeyCode.Space) && StageManager.Instance.RollLevel >= 100)
+        {
+            StageManager.Instance.AddRoll(-StageManager.Instance.RollLevel);
+            rollTimeRemaining = rollTimeMax;
+        }
+
+        if (rollTimeRemaining <= 0.0f)
+        {
+            transform.rotation = new Quaternion(0, 0, 0, 0);
+            rollSprite.gameObject.SetActive(false);
+        }
+        else
+        {
+            Debug.Log((rollTimeMax - rollTimeRemaining) / rollTimeMax);
+            transform.Rotate(new Vector3(0, 0, 360 / rollTimeMax * Time.deltaTime));
+            rollSprite.gameObject.SetActive(true);
+        }
+
+        rollTimeRemaining = Mathf.Max(0.0f, rollTimeRemaining -= Time.deltaTime);
         invincibilityRemaining = Mathf.Max(0.0f, invincibilityRemaining -= Time.deltaTime);
 
         var slowMove = Input.GetButton("Fire2");
 
         transform.Find("Hitbox").GetComponent<SpriteRenderer>().enabled = slowMove;
 
-        var speed = slowMove ? slowMoveSpeed : moveSpeed;
+        var speed = slowMove ? slowMoveSpeed : (rollTimeRemaining > 0.0f ? rollMoveSpeed : moveSpeed);
 
         Vector3 movement = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0).normalized;
         gameObject.transform.position += movement * speed * Time.deltaTime;
@@ -126,7 +150,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnDanmakuCollision(Danmaku bullet)
     {
-        if (invincibilityRemaining > 0.0f)
+        if (invincibilityRemaining > 0.0f || rollTimeRemaining > 0.0f)
             return;
 
         bullet.Destroy();

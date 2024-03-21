@@ -84,6 +84,11 @@ public class StageManager : MonoBehaviour
         }
     }
 
+    public int RollLevel
+    {
+        get => rollLevel;
+    }
+
     public void AddScore(int addedScore)
     {
         score += addedScore;
@@ -114,6 +119,7 @@ public class StageManager : MonoBehaviour
     public void AddRoll(int addedRoll)
     {
         rollLevel += addedRoll;
+        rollLevel = Mathf.Min(100, rollLevel);
         GameObject.Find("RollBar").GetComponent<Image>().fillAmount = rollLevel / 100.0f;
     }
 
