@@ -90,17 +90,33 @@ Projectile movement is done through the DanmakU library, which provides easy cre
 
 **Describe how your work intersects with game feel, graphic design, and world-building. Include your visual style guide if one exists.**
 
+**Visual Style**
 Since our game was inspired by 80s asthetics, I wanted to create a neon pixelated 80s look. The pixelated 16-bit art style was for both simplicity and was in line with the game feel. Since I am not an artist I used AI image generation to create a backbone of my work, which I then edited in Krita, an image editing software. I often used references that Zach, the gameplay designer outlined which I then implemented. Here you can see Zach drawing up the health system
 ![](./ExampleImages/heart_drawing.png) 
 
 which I then implemented 
 
 ![](https://github.com/Konsing/ECS-179-Final-Project/blob/5fc9e9c9b24bae98ba566d9940bad3846553f80c/ExampleImages/health_three_quarters.png) 
+
+Other times I took more liberty with Zach's outlines. 
+
+![](ExampleImages/Player_low_health.png) ![](PunchHell/Assets/Resources/Sprites/Protag_low_health.png)
+
 Of course, most of the time the generated images did not turn out perfectly
+
 ![](ExampleImages/bomb.png)
+
 so I had to touch it up. 
 
 ![](PunchHell/Assets/Resources/Sprites/bomb.png)
+
+Another small thing I did was resize the images. As a team we decided to make certain sprites a certain size for consistency. For example, we decided to make all of the projectilels 128 x 128 pixels. We made them a consistent size in order to expedite the gameplay side, so that Dan would not have to constantly resize the sprites in Unity. 
+
+**Animation System**
+
+Due to the simplicity of the shoot-em up, we had very little animation, and what was there was often very simple transitionary frames. For example, I had a very basic animation for the laser, as it goes from low to full strength.
+
+![](PunchHell/Assets/Resources/Sprites/Laser_low_strength.png) ![](PunchHell/Assets/Resources/Sprites/Laser_half_strength.png) ![](PunchHell/Assets/Resources/Sprites/Laser_full_strength.png)
 
 
 ## Game Logic
