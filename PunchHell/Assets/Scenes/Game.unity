@@ -618,6 +618,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6799362553384712358, guid: c9f5207f7744a084f9306c34287f9f22, type: 3}
+      propertyPath: powerAddedByPowerup
+      value: 101
+      objectReference: {fileID: 0}
+    - target: {fileID: 6799362553384712358, guid: c9f5207f7744a084f9306c34287f9f22, type: 3}
       propertyPath: invincibilityTimeAfterDeath
       value: 3
       objectReference: {fileID: 0}
