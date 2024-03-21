@@ -7,10 +7,25 @@ public class StageManager : MonoBehaviour
 {
     public static StageManager Instance { get; private set; }
 
+    public int Level 
+    { 
+        get => currentLevel;
+        set
+        {
+            if (value == currentLevel)
+                return;
+
+            actionManager.StopStage();
+            actionManager.SetActions(StageDefinitions.GetLevelDefinition(value));
+            currentLevel = value;
+        }
+    }
+
     private StageActionManager actionManager;
 
     private bool paused = false;
     private bool dialogueActive = false;
+    private int currentLevel = 1;
 
     public bool Paused 
     { 
@@ -31,6 +46,19 @@ public class StageManager : MonoBehaviour
             var isPaused = value || paused;
             Time.timeScale = isPaused ? 0.0f : 1.0f;
             dialogueActive = value;
+        }
+    }
+
+    public int LivesRemaining 
+    { 
+        get => livesRemaining;
+        set
+        {
+            livesRemaining = value;
+            if (livesRemaining <= 0)
+            {
+
+            }
         }
     }
 
@@ -57,34 +85,21 @@ public class StageManager : MonoBehaviour
         rollLevel += addedRoll;
     }
 
+    public void ResetStageValues()
+    {
+        livesRemaining = 3;
+        score = 0;
+        power = 0;
+        rollLevel = 0;
+        powerLevel = 1;
+    }
+
     void Start()
     {
         Instance = this;
+
         actionManager = GetComponent<StageActionManager>();
-
-        var enemyAWaypoints = new List<IWaypoint>
-        {
-            Waypoint.FromCameraPercent(250, 90.0f, 90.0f),
-            Waypoint.FromCameraPercent(250, 75.0f, 90.0f),
-            Waypoint.FromCameraPercent(250, 40.0f, 70.0f),
-            Waypoint.FromCameraPercent(250, 20.0f, 60.0f),
-            Waypoint.FromCameraPercent(250, 50.0f, 65.0f)
-        };
-
-        actionManager.SetActions(new List<StageAction>
-        {
-            new StageActionDialogue("Player", "I am so sick and tired of this shit"),
-            new StageActionDialogue("Enemy", "Me too dude"),
-            new StageActionDelay(5.0f),
-            new StageActionSpawn("EnemyA", new Vector3(1100, 1100, 0), enemyAWaypoints),
-            new StageActionDelay(2.5f),
-            new StageActionSpawn("EnemyA", new Vector3(1100, 1100, 0), enemyAWaypoints),
-            new StageActionDelay(2.5f),
-            new StageActionSpawn("EnemyA", new Vector3(1100, 1100, 0), enemyAWaypoints),
-            new StageActionDelay(2.5f),
-            new StageActionWaitForClear()
-        });
-
+        actionManager.SetActions(StageDefinitions.GetLevelDefinition(currentLevel));
         actionManager.BeginStage();
     }
 
