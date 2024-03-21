@@ -96,8 +96,8 @@ Since our game was inspired by 80s asthetics, I wanted to create a neon pixelate
 which I then implemented 
 
 ![](https://github.com/Konsing/ECS-179-Final-Project/blob/5fc9e9c9b24bae98ba566d9940bad3846553f80c/ExampleImages/health_three_quarters.png) 
-Of course, most of the time the generated images did not turn out perfectly !
-[](./ExampleImages/bomb.png)
+Of course, most of the time the generated images did not turn out perfectly
+![](ExampleImages/bomb.png)
 so I had to touch it up. 
 
 ![](PunchHell/Assets/Resources/Sprites/bomb.png)
