@@ -114,6 +114,7 @@ public class StageManager : MonoBehaviour
     public void AddRoll(int addedRoll)
     {
         rollLevel += addedRoll;
+        GameObject.Find("RollBar").GetComponent<Image>().fillAmount = rollLevel / 100.0f;
     }
 
     public void ResetStageValues()
