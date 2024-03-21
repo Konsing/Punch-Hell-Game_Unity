@@ -84,7 +84,7 @@ public class StageActionManager : MonoBehaviour
             {
                 StageManager.Instance.DialogueActive = true;
 
-                var dialogueBox = GameObject.FindFirstObjectByType<DialogueBoxController>(FindObjectsInactive.Include);
+                var dialogueBox = FindFirstObjectByType<DialogueBoxController>(FindObjectsInactive.Include);
                 dialogueBox.SetName(dialogue.characterName);
                 dialogueBox.SetText(dialogue.text);
                 dialogueBox.SetVisible(true);
@@ -111,6 +111,7 @@ public class StageActionManager : MonoBehaviour
                 var enemy = Instantiate(spawn.enemyPrefab, spawn.position, Quaternion.identity);
 
                 var waypoints = enemy.GetComponent<WaypointMovement>();
+
                 if (spawn.waypoints != null && waypoints != null)
                     waypoints.SetWaypoints(spawn.waypoints.ToArray());
             }
@@ -121,12 +122,21 @@ public class StageActionManager : MonoBehaviour
         queueProcessingCoroutine = null;
     }
 
-    void Start()
+    void Awake()
     {
         metricsCluster = GameObject.Find("Cluster");
     }
 
-    public void SetActions(List<StageAction> actions) => this.actions = actions;
+    public bool SetActions(List<StageAction> actions)
+    {
+        if (queueProcessingCoroutine == null)
+        {
+            this.actions = actions;
+            return true;
+        }
+
+        return false;
+    }
 
     public void StopStage()
     {
