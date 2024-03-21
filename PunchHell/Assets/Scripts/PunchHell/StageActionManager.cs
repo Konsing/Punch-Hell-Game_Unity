@@ -71,8 +71,12 @@ public class StageActionManager : MonoBehaviour
             if (action is StageActionWaitForClear)
             {
                 while (GameObject.FindGameObjectsWithTag("Enemy").Length > 0)
+                {
                     yield return new WaitForEndOfFrame();
+                }
             }
+            
+        
 
             if (action is StageActionDialogue dialogue)
             {
@@ -113,6 +117,10 @@ public class StageActionManager : MonoBehaviour
             currentAction++;
         }
 
+        PlayerController.Instance.gameObject.SetActive(false);
+        FindFirstObjectByType<VictoryScreen>(FindObjectsInactive.Include).gameObject.SetActive(true);
+
+
         queueProcessingCoroutine = null;
     }
 
@@ -129,8 +137,11 @@ public class StageActionManager : MonoBehaviour
 
     public void StopStage()
     {
-        StopCoroutine(queueProcessingCoroutine);
-        queueProcessingCoroutine = null;
+        if (queueProcessingCoroutine != null)
+        {
+            StopCoroutine(queueProcessingCoroutine);
+            queueProcessingCoroutine = null;
+        }
     }
 
     public void BeginStage()
