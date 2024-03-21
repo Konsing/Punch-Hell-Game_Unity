@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -145,6 +146,8 @@ public class StageManager : MonoBehaviour
         actionManager = GetComponent<StageActionManager>();
         actionManager.SetActions(StageDefinitions.GetLevelDefinition(currentLevel));
         actionManager.BeginStage();
+
+        SceneManager.UnloadSceneAsync("TitleScreen");
     }
 
     // Update is called once per frame
