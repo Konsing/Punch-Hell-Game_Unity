@@ -7,7 +7,7 @@ public class WaypointMovement : MonoBehaviour
     [SerializeField]
     private WaypointObject[] _editorWaypoints = null;
     private IWaypoint[] _scriptWaypoint = null;
-    public IWaypoint[] waypointList { get => _scriptWaypoint ?? _editorWaypoints; }
+    private IWaypoint[] waypointList { get => _scriptWaypoint ?? _editorWaypoints; }
 
     private int waypointIndex = 0;
     private float timeStationary = 0.0f;
@@ -22,6 +22,9 @@ public class WaypointMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (waypointList == null || waypointList.Length == 0)
+            return;
+
         Vector3 position = transform.position;
         Vector3 nextWaypoint = waypointList[waypointIndex].Position;
 

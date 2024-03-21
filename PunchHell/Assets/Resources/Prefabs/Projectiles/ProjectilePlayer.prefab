@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2497884104745263094
+--- !u!1 &1586498781584359937
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8206685548327007667}
-  - component: {fileID: 803028450861990050}
+  - component: {fileID: 81916933920977040}
+  - component: {fileID: 5062744455970260097}
   m_Layer: 0
-  m_Name: Projectile Enemy1
+  m_Name: ProjectilePlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8206685548327007667
+--- !u!4 &81916933920977040
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2497884104745263094}
+  m_GameObject: {fileID: 1586498781584359937}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -32,13 +32,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &803028450861990050
+--- !u!114 &5062744455970260097
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2497884104745263094}
+  m_GameObject: {fileID: 1586498781584359937}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c4a613ed6868c7143bb742a67f636440, type: 3}
@@ -47,7 +47,7 @@ MonoBehaviour:
   Type: 0
   Material: {fileID: 2100000, guid: 9942c237b767f1646a040f5b3220eb43, type: 2}
   Mesh: {fileID: 0}
-  Sprite: {fileID: 21300000, guid: 62ba0fe6cfa2c8b4cadd50f3f9c49aee, type: 3}
-  ColliderRadius: 6
+  Sprite: {fileID: 21300000, guid: f4c41d9aa706bbd41bc5c4df00422550, type: 3}
+  ColliderRadius: 1
   ColliderOffset: {x: 0, y: 0}
   DefaultPoolSize: 1000

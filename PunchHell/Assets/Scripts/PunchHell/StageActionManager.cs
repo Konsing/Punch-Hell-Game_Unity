@@ -59,7 +59,9 @@ public class StageActionDialogue : StageAction
 public class StageActionManager : MonoBehaviour
 {
     private List<StageAction> actions;
+    private GameObject metricsCluster;
     private int currentAction = 0;
+    private Coroutine queueProcessingCoroutine;
 
     IEnumerator ActionQueueCoroutine()
     {
@@ -81,17 +83,27 @@ public class StageActionManager : MonoBehaviour
             if (action is StageActionDialogue dialogue)
             {
                 StageManager.Instance.DialogueActive = true;
+
                 var dialogueBox = GameObject.FindFirstObjectByType<DialogueBoxController>(FindObjectsInactive.Include);
                 dialogueBox.SetName(dialogue.characterName);
                 dialogueBox.SetText(dialogue.text);
-
                 dialogueBox.SetVisible(true);
+
+                metricsCluster.SetActive(false);
+
                 yield return new WaitUntil(() => Input.GetButtonDown("Fire1"));
 
-                dialogueBox.SetVisible(false);
-                StageManager.Instance.DialogueActive = false;
+                var isRemainingInDialogue = currentAction + 1 <= actions.Count - 1 && actions[currentAction + 1] is StageActionDialogue;
 
-                yield return new WaitForSeconds(0.1f);
+                if (!isRemainingInDialogue)
+                {
+                    dialogueBox.SetVisible(false);
+                    metricsCluster.SetActive(true);
+                }
+
+                StageManager.Instance.DialogueActive = isRemainingInDialogue;
+
+                yield return new WaitForSecondsRealtime(0.1f);
             }
 
             if (action is StageActionSpawn spawn)
@@ -105,17 +117,29 @@ public class StageActionManager : MonoBehaviour
 
             currentAction++;
         }
+
+        queueProcessingCoroutine = null;
     }
 
     void Start()
     {
-        
+        metricsCluster = GameObject.Find("Cluster");
     }
 
     public void SetActions(List<StageAction> actions) => this.actions = actions;
+
+    public void StopStage()
+    {
+        StopCoroutine(queueProcessingCoroutine);
+        queueProcessingCoroutine = null;
+    }
+
     public void BeginStage()
     {
-        StartCoroutine(ActionQueueCoroutine());
+        if (queueProcessingCoroutine != null)
+            return;
+
+        queueProcessingCoroutine = StartCoroutine(ActionQueueCoroutine());
     }
 
     // Update is called once per frame

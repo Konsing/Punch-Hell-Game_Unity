@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 225695887396390613}
   - component: {fileID: 1598157482080437374}
   m_Layer: 7
-  m_Name: Enemy
+  m_Name: EnemyBase
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5041,12 +5041,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be9814ad7c0b30042a04e391176d9333, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _editorWaypoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  _editorWaypoints: []
 --- !u!1 &4254898879205226406
 GameObject:
   m_ObjectHideFlags: 0
@@ -5091,7 +5086,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56d35b1ef2eef8249b0ba1b88e74fe60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DanmakuType: {fileID: 0}
+  DanmakuType: {fileID: 803028450861990050, guid: 4db4d780a184709469eaf40f20c54e35, type: 3}
   Speed:
     _min: 220
     _max: 220

@@ -107,8 +107,8 @@ MonoBehaviour:
   bulletPointPrefab: {fileID: 4769289223948220687, guid: 8019d65f3c15bf441a10daaad98a1455, type: 3}
   health: 120
   scoreValue: 10
-  hasPointDrop: 1
-  hasPowerDrop: 0
+  hasPointDrop: 0
+  hasPowerDrop: 1
 --- !u!198 &4649166780931431690
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -5041,13 +5041,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be9814ad7c0b30042a04e391176d9333, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _editorWaypoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  _editorWaypoints: []
 --- !u!1 &4254898879205226406
 GameObject:
   m_ObjectHideFlags: 0
