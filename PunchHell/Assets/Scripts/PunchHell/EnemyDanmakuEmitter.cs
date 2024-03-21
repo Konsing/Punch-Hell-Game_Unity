@@ -10,7 +10,6 @@ using DanmakU;
 
 public class DanmakuEmitter : DanmakuBehaviour
 {
-
     public DanmakuPrefab DanmakuType;
 
     public Range Speed = 5f;
