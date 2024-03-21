@@ -37,6 +37,7 @@ public class StageManager : MonoBehaviour
             FindFirstObjectByType<PauseMenu>(FindObjectsInactive.Include)
                 .GetComponentInChildren<Text>().text = $"Stage {currentLevel}";
             ResetStageValues();
+            actionManager.BeginStage();
         }
     }
 
