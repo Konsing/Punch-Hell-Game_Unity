@@ -92,7 +92,7 @@ Projectile movement is done through the DanmakU library, which provides easy cre
 
 Since our game was inspired by 80s asthetics, I wanted to create a neon pixelated 80s look. The pixelated 16-bit art style was for both simplicity and was in line with the game feel. Since I am not an artist I used AI image generation to create a backbone of my work, which I then edited in Krita, an image editing software. I often used references that Zach, the gameplay designer outlined which I then implemented. [Here you can see Zach drawing up the health system](ExampleImages/heart_drawing.png) [which I then implemented](https://github.com/Konsing/ECS-179-Final-Project/blob/5fc9e9c9b24bae98ba566d9940bad3846553f80c/ExampleImages/health_three_quarters.png) Of course, most of the time the generated images did not turn out perfectly
 
-![](ExampleImages/bomb.png) 
+[![](ExampleImages/bomb.png) ](https://github.com/Konsing/ECS-179-Final-Project/blob/4a2715874aae2db620e9400608cbe3b8dcb7f286/ExampleImages/bomb.png)
 
 so I had to touch it up. 
 
