@@ -139,6 +139,7 @@ public class StageManager : MonoBehaviour
         Instance = this;
         lifeBar = FindFirstObjectByType<LifeBar>(FindObjectsInactive.Include);
 
+        currentLevel = PlayerPrefs.GetInt("CurrentLevel", 1);
         ResetStageValues();
         actionManager = GetComponent<StageActionManager>();
         actionManager.SetActions(StageDefinitions.GetLevelDefinition(currentLevel));
@@ -148,6 +149,11 @@ public class StageManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!dialogueActive && !paused && GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
+        {
+            PlayerController.Instance.gameObject.SetActive(false);
+            FindFirstObjectByType<VictoryScreen>(FindObjectsInactive.Include).gameObject.SetActive(true);
+        }
         
     }
 }

@@ -2,10 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using System.Collections;
-using System.Collections.Generic;
 using DanmakU.Fireables;
-using UnityEngine;
 using DanmakU;
 
 public class DanmakuEmitter : DanmakuBehaviour
