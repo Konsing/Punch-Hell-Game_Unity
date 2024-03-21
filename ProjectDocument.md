@@ -87,6 +87,7 @@ Projectile movement is done through the DanmakU library, which provides easy cre
 **List your assets, including their sources and licenses.**
 
 - [Layer AI](https://www.layer.ai/) - Used for image generation
+- [Krita](https://krita.org/en/) - used for editing the images
 
 **Describe how your work intersects with game feel, graphic design, and world-building. Include your visual style guide if one exists.**
 
