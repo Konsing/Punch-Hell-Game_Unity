@@ -72,8 +72,10 @@ Temporary Items
 
 # Visual Studio cache directory
 .vs/
+.vsconfig
 /PunchHell/.vs/
 /PunchHell/.vscode/
+/PunchHell/.vsconfig/
 
 # Gradle cache directory
 .gradle/
