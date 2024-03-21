@@ -15,8 +15,7 @@ public class VictoryScreen : MonoBehaviour
     
     public void NextLevelClicked()
     {
-        StageManager.Instance.Level += 1;
-        StageManager.Instance.ActionManager.BeginStage();
+        StageManager.Instance.Level += 1; 
         gameObject.SetActive(false);
     }
 
