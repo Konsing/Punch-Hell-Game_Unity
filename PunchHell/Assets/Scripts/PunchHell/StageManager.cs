@@ -21,7 +21,6 @@ public class StageManager : MonoBehaviour
     private int power = 0;
     private int powerLevel = 1;
     private int rollLevel = 0;
-    private bool stageStart = false;
 
     public int Level 
     { 
@@ -146,17 +145,11 @@ public class StageManager : MonoBehaviour
         actionManager = GetComponent<StageActionManager>();
         actionManager.SetActions(StageDefinitions.GetLevelDefinition(currentLevel));
         actionManager.BeginStage();
-        stageStart = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!dialogueActive && !paused && GameObject.FindGameObjectsWithTag("Enemy").Length == 0 && stageStart)
-        {
-            PlayerController.Instance.gameObject.SetActive(false);
-            FindFirstObjectByType<VictoryScreen>(FindObjectsInactive.Include).gameObject.SetActive(true);
-        }
         
     }
 }
