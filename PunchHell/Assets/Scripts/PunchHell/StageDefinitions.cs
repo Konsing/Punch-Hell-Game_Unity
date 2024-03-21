@@ -8,14 +8,11 @@ using UnityEngine;
 
 public static class StageDefinitions
 {
-    public static List<StageAction> GetLevelDefinition(int level)
+    public static List<StageAction> GetLevelDefinition(int level) => level switch
     {
-        return level switch
-        {
-            1 => GetLevel1(),
-            _ => null,
-        };
-    }
+        1 => GetLevel1(),
+        _ => null,
+    };
 
     private static List<StageAction> GetLevel1()
     {

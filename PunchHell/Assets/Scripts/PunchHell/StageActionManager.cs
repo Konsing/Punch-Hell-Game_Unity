@@ -3,10 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class StageAction
-{
-
-}
+public abstract class StageAction { }
+public class StageActionWaitForClear : StageAction { }
 
 public class StageActionDelay : StageAction
 {
@@ -18,10 +16,6 @@ public class StageActionDelay : StageAction
     }
 }
 
-public class StageActionWaitForClear : StageAction
-{
-
-}
 
 public class StageActionSpawn : StageAction
 {
@@ -60,8 +54,8 @@ public class StageActionManager : MonoBehaviour
 {
     private List<StageAction> actions;
     private GameObject metricsCluster;
-    private int currentAction = 0;
     private Coroutine queueProcessingCoroutine;
+    private int currentAction = 0;
 
     IEnumerator ActionQueueCoroutine()
     {
@@ -122,11 +116,6 @@ public class StageActionManager : MonoBehaviour
         queueProcessingCoroutine = null;
     }
 
-    void Awake()
-    {
-        metricsCluster = GameObject.Find("Cluster");
-    }
-
     public bool SetActions(List<StageAction> actions)
     {
         if (queueProcessingCoroutine == null)
@@ -149,10 +138,16 @@ public class StageActionManager : MonoBehaviour
         if (queueProcessingCoroutine != null)
             return;
 
+        currentAction = 0;
+
         queueProcessingCoroutine = StartCoroutine(ActionQueueCoroutine());
     }
 
-    // Update is called once per frame
+    void Awake()
+    {
+        metricsCluster = GameObject.Find("Cluster");
+    }
+
     void Update()
     {
         

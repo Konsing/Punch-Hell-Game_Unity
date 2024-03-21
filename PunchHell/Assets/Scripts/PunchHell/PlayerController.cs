@@ -14,13 +14,24 @@ public class PlayerController : MonoBehaviour
     private float slowMoveSpeed = 64.0f;
     [SerializeField]
     private float grazeCooldown = 0.05f;
+    [SerializeField]
+    private float invincibilityTimeAfterDeath = 2.0f;
+    [SerializeField]
+    private int powerAddedByPowerup = 10;
+    [SerializeField]
+    private int scoreAddedByDrop = 20;
+    [SerializeField]
+    private int scoreAddedByDestroyedBullets = 1;
+    [SerializeField]
+    private int scoreAddedByGraze = 1;
+
+
 
     private PlayerDanmakuEmitter[] bulletEmitters;
+    private SpriteRenderer[] sprites;
+    private Coroutine flashSpriteCoroutine;
     private float invincibilityRemaining = 0.0f;
     private float lastGraze = 0.0f;
-
-    private Coroutine flashSpriteCoroutine;
-    private SpriteRenderer[] sprites;
 
     IEnumerator FlashSpriteCoroutine()
     {
@@ -48,7 +59,7 @@ public class PlayerController : MonoBehaviour
 
     void FlashSprite()
     {
-        if (flashSpriteCoroutine == null)
+        if (flashSpriteCoroutine == null && gameObject.activeInHierarchy)
             flashSpriteCoroutine = StartCoroutine(FlashSpriteCoroutine());
     }
 
@@ -61,23 +72,23 @@ public class PlayerController : MonoBehaviour
         return false;
     }
 
-    void Start()
-    {
-        Instance = this;
-
-        bulletEmitters = GetComponentsInChildren<PlayerDanmakuEmitter>();
-        sprites = GetComponentsInChildren<SpriteRenderer>();
-    }
-
-    void SetTurretsEnabled(int count)
+    public void SetTurretsEnabled(int count)
     {
         for (int i = 1; i <= 3; i++)
             transform.Find($"Turret {i}").gameObject.SetActive(count >= i);
     }
 
+    void Start()
+    {
+        Instance = this;
+
+        bulletEmitters = GetComponentsInChildren<PlayerDanmakuEmitter>(true);
+        sprites = GetComponentsInChildren<SpriteRenderer>(true);
+    }
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !StageManager.Instance.DialogueActive)
             StageManager.Instance.Paused = !StageManager.Instance.Paused;
 
         invincibilityRemaining = Mathf.Max(0.0f, invincibilityRemaining -= Time.deltaTime);
@@ -93,8 +104,10 @@ public class PlayerController : MonoBehaviour
 
         var cameraBounds = Camera.main.OrthographicBounds();
 
-        gameObject.transform.position = new Vector3(Mathf.Clamp(transform.position.x, cameraBounds.min.x, cameraBounds.max.x),
-            Mathf.Clamp(transform.position.y, cameraBounds.min.y, cameraBounds.max.y), transform.position.z);
+        gameObject.transform.position = new Vector3(
+            Mathf.Clamp(transform.position.x, cameraBounds.min.x, cameraBounds.max.x),
+            Mathf.Clamp(transform.position.y, cameraBounds.min.y, cameraBounds.max.y),
+            transform.position.z);
 
         foreach (var emitter in bulletEmitters)
         {
@@ -107,12 +120,13 @@ public class PlayerController : MonoBehaviour
 
     void Die()
     {
-        invincibilityRemaining = 2.0f;
+        StageManager.Instance.LivesRemaining -= 1;
+        invincibilityRemaining = invincibilityTimeAfterDeath;
     }
 
     public void OnDanmakuCollision(Danmaku bullet)
     {
-        if (invincibilityRemaining > 0.0)
+        if (invincibilityRemaining > 0.0f)
             return;
 
         bullet.Destroy();
@@ -123,30 +137,31 @@ public class PlayerController : MonoBehaviour
     public void OnDanmakuGraze()
     {
         lastGraze += Time.deltaTime;
+
         if (lastGraze < grazeCooldown)
             return;
 
         lastGraze = 0.0f;
-        StageManager.Instance.AddScore(1);
+        StageManager.Instance.AddScore(scoreAddedByGraze);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Power"))
         {
-            StageManager.Instance.AddPower(5);
+            StageManager.Instance.AddPower(powerAddedByPowerup);
             Destroy(other.gameObject);
         }
 
         if (other.gameObject.CompareTag("Point"))
         {
-            StageManager.Instance.AddScore(20);
+            StageManager.Instance.AddScore(scoreAddedByDrop);
             Destroy(other.gameObject);
         }
 
         if (other.gameObject.CompareTag("Bullet Point"))
         {
-            StageManager.Instance.AddScore(1);
+            StageManager.Instance.AddScore(scoreAddedByDestroyedBullets);
             Destroy(other.gameObject);
         }
     }
