@@ -96,12 +96,20 @@ Since our game was inspired by 80s asthetics, I wanted to create a neon pixelate
 which I then implemented 
 
 ![](https://github.com/Konsing/ECS-179-Final-Project/blob/5fc9e9c9b24bae98ba566d9940bad3846553f80c/ExampleImages/health_three_quarters.png) 
+
+Other times I took more liberty with Zach's outlines. 
+
+![](ExampleImages/Player (low health).png) ![](PunchHell/Assets/Resources/Sprites/Protag_low_health.png)
+
 Of course, most of the time the generated images did not turn out perfectly
+
 ![](ExampleImages/bomb.png)
+
 so I had to touch it up. 
 
 ![](PunchHell/Assets/Resources/Sprites/bomb.png)
 
+Another small thing I did was resize the images. As a team we decided to make certain sprites a certain size for consistency. For example, we decided to make all of the projectilels 128 x 128 pixels. We made them a consistent size in order to expedite the gameplay side, so that Dan would not have to constantly resize the sprites in Unity. 
 
 ## Game Logic
 
