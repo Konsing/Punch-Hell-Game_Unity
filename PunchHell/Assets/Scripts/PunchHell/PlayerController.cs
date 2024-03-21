@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float slowMoveSpeed = 64.0f;
     [SerializeField]
-    private float grazeCooldown = 0.05f;
+    private float grazeCooldown = 0.02f;
     [SerializeField]
     private float invincibilityTimeAfterDeath = 2.0f;
     [SerializeField]
@@ -143,6 +143,7 @@ public class PlayerController : MonoBehaviour
 
         lastGraze = 0.0f;
         StageManager.Instance.AddScore(scoreAddedByGraze);
+        StageManager.Instance.AddRoll(scoreAddedByGraze);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
