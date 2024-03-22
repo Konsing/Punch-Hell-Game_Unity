@@ -29,6 +29,15 @@ public static class StageDefinitions
         return new List<StageAction>
         {
                 new StageActionSpawn("Enemies/EnemyBase", new Vector3(640, 720, 0)),
+                new StageActionDialogue("TUTORIAL:", "Welcome to PunchHell! You will not be having a good time..."),
+                new StageActionDialogue("TUTORIAL:", "But don't worry! You just got to roll with it."),
+                new StageActionDialogue("TUTORIAL:", "Health, score, and rage meter is at the bottom left of the screen."),
+                new StageActionDialogue("TUTORIAL:", "Press WASD to move around."),
+                new StageActionDialogue("TUTORIAL:", "Press space for rage ability and press right click to see your hitbox."),
+                new StageActionDialogue("TUTORIAL:", "Rage is when you have built up enough 'graze' until the meter is full"),
+                new StageActionDialogue("TUTORIAL:", "Graze is when a projectile overlaps with your player icon without touching the red hitbox"),
+                new StageActionDialogue("TUTORIAL:", "Pick up the red/blue rectangles that drop from enemies to get turrets and avoid the white bullets"),
+                new StageActionDialogue("TUTORIAL:", "If you want to reread, restart this level."),
                 new StageActionDialogue("Boss Boss:", "Congradulations! You have been promoted to the Commander of the Robo-Boxer Division!"),
                 new StageActionDialogue("Boss Boss:", "Your reponsibilities will now include managing, maintaining, and organizing over 10,000, boxing robots, ensuring that the fated Hero stops foiling my EVIL plans, and having meetings in an inexplicably dark room every Tuesday at 4 P.M. Bring donuts by the way."),
                 new StageActionDialogue("Jose, former janitor, now Commander of Robo-Boxer Division:", "Um...Boss boss? W-what about the former commander?"),
