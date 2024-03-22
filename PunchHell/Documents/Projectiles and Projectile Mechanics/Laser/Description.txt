@@ -1,0 +1,17 @@
+-ChargeTime:
+3 seconds. During this time, show the player a projection of where the laser is. This projection CAN move towards the player, however once firing, the laser CAN NO LONGER MOVE.
+
+-Duration:
+2 seconds.
+
+-Speed:
+12 frames. Should fill up the screen in 100 or less MS.
+
+-Targeting Speed:
+Slow. The player should be able to easily straif away from the laser. 1/2 player movement speed for adjusting the positioning.
+
+Damage: Depends on difficulty.
+	Easy: 1/4 heart
+	Medium: 1/2 heart
+	Hard: 1 heart
+	Impossible: DEATH

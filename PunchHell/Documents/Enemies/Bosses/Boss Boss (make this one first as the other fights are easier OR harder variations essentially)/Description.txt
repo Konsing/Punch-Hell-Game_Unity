@@ -1,0 +1,7 @@
+Should be the typical boss description.
+Health: 250
+Randomly use attack patterns every 7 seconds.
+Use large projectiles
+Explode the sprite when it dies
+
+Finish the mission!
