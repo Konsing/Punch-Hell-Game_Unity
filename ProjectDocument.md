@@ -189,7 +189,9 @@ Rough sketch of gameplay mechanics -
 Initial story document containing level designs - 
 Initial level design - 
 
-I made a guide for the group to build the framework of the game in case their silence meant they had no direction - 
+I made a guide for the group to build the framework of the game in case their silence meant they had no direction - https://docs.google.com/document/d/1RliyboyAL2Pkde6kl9ltIv3SLjySaK0Jqm7ZtEzv4bo/edit?usp=sharing
+Initial Stoyr - https://docs.google.com/document/d/1p2P99ieAFLnA-otmrhpaOJq8ouLhLcdBULgW5sqo8cI/edit?usp=sharing
+
 
 Unfortunately, by the time the group had finished with other classes, the depth of the game became too overwhelming to handle within the remaining timeframe. Due to many sudden complaints of misunderstanding and miscommunication, I reworked the game from the ground up with much more simplicity. I contributed a lot more to other roles in reworking the game, including sprite design, UI, and producer.
 Simpiler story - 
