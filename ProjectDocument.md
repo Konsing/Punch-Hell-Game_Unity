@@ -75,6 +75,41 @@ I also contributed to the strategic design of enemy movements in levels 2-6, enh
 
 Reflecting on this journey, I recognize areas for improvement in my early producer role but also acknowledge the immense learning gained, which has equipped me for future leadership in game development. The project highlighted the critical importance of time management and effective communication, with a lesson learned on prioritizing the core game development over additional features.
 
+## User Interface and Input - Ahmed Irtija
+
+
+**Describe your user interface and how it relates to gameplay. This can be done via the template.**
+For the game's UI, I wanted players to dive right into a space adventure vibe. I started off by setting up the [main menu](https://github.com/Konsing/ECS-179-Final-Project/blob/241156e60e15781521d02f81b1f8f216634f0bd9/PunchHell/Assets/Scripts/PunchHell/Menu/MainMenu.cs#L6C1-L17C2) with some cool buttons like 'New Game', 'Options', 'Credits', and 'Quit Game', all set against a galaxy-themed background. When you hit 'New Game', it takes you to the adventure's [level panel](https://github.com/Konsing/ECS-179-Final-Project/blob/4816c7c7b91c301848dff1db292c6193b8a926ac/PunchHell/Assets/Scripts/PunchHell/Menu/LevelMenu.cs#L7C1-L28C2) which is the first level in our game. 'Options' was kept simple for now, leading to a placeholder screen for sound settings up until our Producer/Audio, Konsing Lopez, added its functionality, while 'Credits' lays out who's behind the game magic which just has our names and roles, and 'Quit Game' just shuts down the game as the name suggests.
+
+
+I then put together a level selector so players can jump to any of the six levels we designed, whcich you can see the scripts I created with the different waypoints for them and different enemies [here](https://github.com/Konsing/ECS-179-Final-Project/blob/4816c7c7b91c301848dff1db292c6193b8a926ac/PunchHell/Assets/Scripts/PunchHell/StageDefinitions.cs#L11C1-L322C2). This part needed a bit of extra coding with a levels menu script to get it all working smooth, each levels had its own enemies and movements for them with diffulty increasing as levels goes on. Then came the [victory](https://github.com/Konsing/ECS-179-Final-Project/blob/4816c7c7b91c301848dff1db292c6193b8a926ac/PunchHell/Assets/Scripts/PunchHell/Menu/VictoryScreen.cs#L7C1-L49C2) and [loser](https://github.com/Konsing/ECS-179-Final-Project/blob/4816c7c7b91c301848dff1db292c6193b8a926ac/PunchHell/Assets/Scripts/PunchHell/Menu/LoserScreen.cs#L7C1-L40C2) screens, which pop up based on your game outcome, using similar button setups for restarting, moving to the next level, or going back to the main menu, all of this were done in their respective scripts.
+
+
+Working with Dan Le, our movement/physics guy, was the next step. We hashed out six unique levels, each with different movesets, making sure there was plenty of variety to keep things interesting. Along the way, I fixed a bunch of bugs, like levels not loading right or restart buttons not working or the panels not moving away from the screen.
+
+
+All in all, the UI's got a massive role in setting the game's overall mood, with that retro 80s space feel shining through.
+
+
+Best way to really get a good understand of the UI is playing the game itself.
+
+
+
+
+**Describe the default input configuration.**
+On the control side of things, we went for straightforward method:
+
+
+- **WASD keys:** For moving around the place.
+- **Fire 1 (left click):** Lets you blast away.
+- **Fire 2 (right click):** Puts things in slow-mo, giving you some edge.
+- **Space:** Pull off some cool rolls.
+- **ESC:** Hits pause on the action.
+
+
+**Add an entry for each platform or input style your project supports.**
+We tailored the game for PC, sticking to the classic keyboard and mouse combo for all the in-game action. This setup fits like a glove with our game's quick-paced space theme and keeps things intuitive for players.
+
 
 
 ## Movement/Physics - Dan Le
@@ -371,3 +406,14 @@ In addition to the plot segments in mission 1, I also added a tutorial segment i
 ## Game Feel and Polish
 
 **Document what you added to and how you tweaked your game to improve its game feel.**
+To really nail the game feel, I took a hands-on approach, diving into every new feature we added one at a time. I believe getting into the player's shoes is crucial to understand and refine the game's vibe, so I made sure to play through each change myself.
+
+
+Starting with the menus, I saw that players would benefit from having more control right after a game round. So, I added a restart option on both the loser and victory screens, allowing players to jump straight back into the action without unnecessary delays. Additionally, I put in a 'New Game' button to give players a quick way to reset the levels and start fresh, enhancing the game's flow and user experience.
+
+
+Digging deeper into the gameplay, I focused on the level difficulty and overall challenge. It felt crucial to get this balance right for players seeking a good thrill. By modifying the enemy prefabs, I adjusted their health bars and movement patterns. These changes weren't just random; they were carefully created by checking after every update, making the game tougher and more engaging for those who crave a challenge.
+
+
+These tweaks had a visible impact, not just on the game's appearance but also on its playability and feel. By methodically testing and adjusting each element, I believe we significantly enhanced the overall game experience, making it more fun and rewarding for players.
+
