@@ -1,0 +1,31 @@
+Pie Slice attack:
+When Projectiles fire in all directions without any homing capabilities. Leave just enough space so that the player can find safe haven.
+Projectile stream count: 10
+Duration: 3 seconds
+
+Pinwheel attack:
+When Projectiles fire in all directions without any homing, then slowly rotate. Leave just enough space so that the player can find safe haven.
+Projectile stream count: 10
+Duration: 7 seconds
+
+
+Shotgun attack:
+Like a bigger trident, but fires bursts of 6 instead of 3. Ironically if the player doesn't move it will most likely miss them
+Duration: 6 seconds
+burst interval: 0.4 seconds.
+
+
+Moving laser attack:
+Laser moves towards the player while it is being fired. This SEEMS targeted but it's actually just a scripted attack designed to corner the player and then unleash a shotgun or a gattling gun attack to artificially push them into a pinch (unless they dodge through the moving laser's pathing)
+Speed: 1/5 player speed
+duration: 3 seconds.
+
+
+Gattling gun attack:
+Fire random projectiles in all directions.
+Projectile count: 10 projectiles per second
+Duration: 13 seconds.
+
+
+
+

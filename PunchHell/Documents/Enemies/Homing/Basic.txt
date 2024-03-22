@@ -1,0 +1,9 @@
+Flies from top of the screen to the bottom of the screen while firing homing projectiles. Projectiles are not targeted at the player, however the projectiles' homing ability narrows in on the player
+
+
+Health: 2
+
+Speed: 1/4 player speed
+
+Projectiles fire at homing projectile chargeTime intervals
+

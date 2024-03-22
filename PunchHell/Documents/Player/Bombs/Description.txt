@@ -1,0 +1,5 @@
+Explosion around the player. Destroys projectiles, enemies, and does not harm the player
+
+Radius: 15
+Damage: 100
+Count: 3
