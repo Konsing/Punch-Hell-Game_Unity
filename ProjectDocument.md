@@ -183,8 +183,7 @@ which is similar but does not provide the brief convenience and reloadability of
 
 ### The section below this header was authored by Zachary Van Vorst who was responsible for Gameplay Logic design, however due to frequent miscommunication and the group's late start (due to finals, test, etc), became a sort of jack of all trades
 The awkward label is due to the unique circumstances regarding my own contributions. I do not wish to blame my group for the final result, only that I get evaluated on the effort I put into the project. I split this description into four phases: the work that has been represented within the game itself, the work I did, the work I did...again, and the descrepency between them.
-
-### The work represented in the game
+**The work represented in the game**
 
 Code for the dialogue I did.
  
@@ -214,8 +213,8 @@ Buttons - https://github.com/Konsing/ECS-179-Final-Project/tree/main/PunchHell/D
 
 Player Sprite - https://github.com/Konsing/ECS-179-Final-Project/tree/main/PunchHell/Documents/Player
 
-### The work I did (excluding the above)
 
+**The work I did (excluding the above)**
 The group initially decided on a bullethell/light novel format for the game, with heavy emphasis on the variety of enemies, level design, and story. As the gameplay designer, I designed different enemies, attack patterns, level designs, abilities, menus, sprites, menus, and just about every aspect of the game itself on my own. I included video examples from other similar games to reference, sprites, examples of the backgrounds, how I wanted the font to look like, the general theme for visual design and audio queues. I frequently asked for questions regarding feedback and questions, however due to the group being busy with other classes, I continued my work, taking the collective silence as agreement.
 
 Here are a few examples of my early designs:
@@ -232,32 +231,22 @@ I made a guide for the group to build the framework of the game - https://docs.g
 
 Asking for feedback and questions - https://github.com/Konsing/ECS-179-Final-Project/blob/main/PunchHell/Documents/Evidence%20of%20Producer%20role/Screenshot%202024-03-22%20142955.png
 
-**Needless to say, the initial conception of almost every aspect of the game (except the decision on the genre and theme of the game) came from me. I also acted as the producer in this initial state, contacting and representing my group during peer review.**
+Needless to say, the initial conception of almost every aspect of the game (except the decision on the genre and theme of the game) came from me. I also acted as the producer in this initial state, contacting and representing my group during peer review.
 
 Discord message - https://github.com/Konsing/ECS-179-Final-Project/blob/main/PunchHell/Documents/Evidence%20of%20Producer%20role/Screenshot%202024-03-22%20143018.png
 
 Ultimately, many features were either not implemented or only only partially implemented. Here is a list of a few of them (others can be found in the directory: https://github.com/Konsing/ECS-179-Final-Project/tree/main/PunchHell/Documents)
+-The 10,000 word plot and gameplay design
+-the stages of implementation
+-Enemy and boss designs
+-level designs
+-player abilities
+-projectile mechanics
+-sound designs
+-background style
+-Mission UI format
 
-- The 10,000 word plot and gameplay design
-  
-- the stages of implementation
-  
-- Enemy and boss designs
-  
-- level designs
-  
-- player abilities
-  
-- projectile mechanics
-  
-- sound designs
-  
-- background style
-  
-- Mission UI format
-
-### Work I did...again
-
+**Work I did...again**
 Unfortunately, by the time the group had finished with other classes, the depth of the game became too overwhelming to handle within the remaining timeframe. Due to many sudden complaints of misunderstanding and miscommunication, I reworked the game from the ground up with more simplicity. I contributed a lot more to other roles in reworking the game, including sprite design and UI. Again, most of my unused designs and descriptions are found within any folder within the Documents Directory.
 
 Simpiler story - https://github.com/Konsing/ECS-179-Final-Project/tree/main/PunchHell/Documents/Plot
@@ -276,10 +265,8 @@ Projectile image - https://github.com/Konsing/ECS-179-Final-Project/blob/main/Pu
 
 asking for more feedback - https://github.com/Konsing/ECS-179-Final-Project/blob/main/PunchHell/Documents/Evidence%20of%20Producer%20role/Screenshot%202024-03-22%20143106.png
 
-### Why other gameplay Mechanics were implemented (The descrepency between design and implementation)
-
-The group began coding within 48 hours of submission, and failed to implement my remade designs, ideas, and work due to relying on an inflexible framework for bullethells: "Danmaku". Dan Le, Ahmed, and Konsing were eseentially cornered, and cobbled together what little mechanics the Danmaku framework/library supported regardless of my designs. To their credit, they did try to implement as much as my ideas and designs as they could, but the time constraint really hampered progress. I was only made aware of this fact 30 minutes before the demonstration, hence why my own contribution seems to pale in comparison.
-
+**Why other gameplay Mechanics were implemented (The descrepency between design and implementation)**
+The group began coding within too short a time before submission, and failed to implement my remade designs, ideas, and work due to relying on an inflexible framework for bullethells: "Danmaku". Cornered, we cobbled together what little mechanics the Danmaku framework/library supported regardless of my designs. I was only made aware of this fact 30 minutes before the demonstration, hence why my own contribution seems to pale in comparison.
 # Sub-Roles
 
 ## Audio
@@ -299,9 +286,14 @@ We found feedback to be surprisngly positive, with many people unfamiliar with t
 ## Narrative Design
 
 **Document how the narrative is present in the game via assets, gameplay systems, and gameplay.** 
+
 The narrative closely follows the theme of rolling with the punches with the main character Jose. Jose is a janitor working for the big bad evil guy, Boss Boss, until one day he gets an unexpected promotion. He is now commander of an entire army of boxer robots, the only problem being that he immediately loses control of all of them when the boss spills coffee on the way out of the office. Unbeknownst to the entire organization, Jose is assaulted by the robot army. Just as Jose thinks he can get some respit, the company take notice of him. Being a relatively unknown element within the company, the staff assault him alongside the robots. Once again, he proves to be triumphant until Boss Boss returns and tries to kill him. Jose proves victorious. He is tired. He wants to go home. Suddenly the person who was originally supposed to stand against the big bad evil guy shows up and they duke it out. Jose once again wins!
 
 Each mission has a dialogue segmment displaying a portion of the story before the stage begins with backgrounds, a canvas with who is speaking, and appropriate music.
+
+Dialogue box - 
+
+
 
 
 
