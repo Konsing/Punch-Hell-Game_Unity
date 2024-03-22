@@ -75,8 +75,8 @@ public class StageActionManager : MonoBehaviour
                     yield return new WaitForEndOfFrame();
                 }
             }
-            
-        
+
+
 
             if (action is StageActionDialogue dialogue)
             {
@@ -161,6 +161,22 @@ public class StageActionManager : MonoBehaviour
 
     void Update()
     {
-        
+
+    }
+}
+
+public class StageActionSetBackground : StageAction
+{
+    public GameObject shownBackground;
+    public GameObject hidden1;
+    public GameObject hidden2;
+    public StageActionSetBackground(GameObject shownBackground, GameObject hidden1, GameObject hidden2)
+    {
+        this.shownBackground = shownBackground;
+        this.hidden1 = hidden1;
+        this.hidden2 = hidden2;
+        this.shownBackground.SetActive(true);
+        this.hidden1.SetActive(false);
+        this.hidden2.SetActive(false);
     }
 }

@@ -8,15 +8,30 @@ using UnityEngine;
 
 public static class StageDefinitions
 {
+    private static GameObject serverBackground;
+    private static GameObject securityBackground;
+    private static GameObject gameplayBackground;
+
+
+    
     public static List<StageAction> GetLevelDefinition(int level) => level switch
     {
         1 => GetLevel1(),
         2 => GetLevel2(),
         _ => null,
     };
+      static StageDefinitions()
+    {
+     
+         serverBackground = GameObject.Find("background_server");
+         securityBackground = GameObject.Find("background_security");
+         gameplayBackground = GameObject.Find("background_gameplay");
+    }
 
     private static List<StageAction> GetLevel1()
     {
+  
+
         var enemyAWaypoints = new List<IWaypoint>
         {
                 Waypoint.FromCameraPercent(250, 90.0f, 90.0f),
@@ -29,6 +44,7 @@ public static class StageDefinitions
         return new List<StageAction>
         {
                 new StageActionSpawn("Enemies/EnemyBase", new Vector3(640, 720, 0)),
+                new StageActionSetBackground(serverBackground, gameplayBackground, securityBackground),
                 new StageActionDialogue("TUTORIAL:", "Welcome to PunchHell! You will not be having a good time..."),
                 new StageActionDialogue("TUTORIAL:", "But don't worry! You just got to roll with it."),
                 new StageActionDialogue("TUTORIAL:", "Health, score, and rage meter is at the bottom left of the screen."),
@@ -56,6 +72,7 @@ public static class StageDefinitions
                 new StageActionDialogue("Robot #1:", "Insufficient clearence level. Breach found. Initiating kill mode."),
                 new StageActionDialogue("Jose:", "I hope I'm not blamed for this."),
                 new StageActionDialogue("Rex, former commander of Robo-Boxer Divison, now unemployed:", "I wouldn't count on it. *breathes his last breath*"),
+                new StageActionSetBackground(gameplayBackground, securityBackground, serverBackground),
                 new StageActionDelay(5.0f),
                 new StageActionSpawn("Enemies/EnemyA", new Vector3(1100, 1100, 0), enemyAWaypoints),
                 new StageActionDelay(2.5f),
@@ -65,10 +82,16 @@ public static class StageDefinitions
                 new StageActionDelay(2.5f),
                 new StageActionWaitForClear()
         };
+
+
+
     }
+
+
 
     private static List<StageAction> GetLevel2()
 {
+    // background.SetGameplayBackground();
     var enemyAWaypoints = new List<IWaypoint>
         {
                 Waypoint.FromCameraPercent(250, 85.0f, 75.0f),
