@@ -232,7 +232,7 @@ I made a guide for the group to build the framework of the game - https://docs.g
 
 Asking for feedback and questions - https://github.com/Konsing/ECS-179-Final-Project/blob/main/PunchHell/Documents/Evidence%20of%20Producer%20role/Screenshot%202024-03-22%20142955.png
 
-Needless to say, the initial conception of almost every aspect of the game (except the decision on the genre and theme of the game) came from me. I also acted as the producer in this initial state, contacting and representing my group during peer review.
+**Needless to say, the initial conception of almost every aspect of the game (except the decision on the genre and theme of the game) came from me. I also acted as the producer in this initial state, contacting and representing my group during peer review.**
 
 Discord message - https://github.com/Konsing/ECS-179-Final-Project/blob/main/PunchHell/Documents/Evidence%20of%20Producer%20role/Screenshot%202024-03-22%20143018.png
 
