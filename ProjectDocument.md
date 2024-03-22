@@ -238,23 +238,23 @@ Discord message - https://github.com/Konsing/ECS-179-Final-Project/blob/main/Pun
 
 Ultimately, many features were either not implemented or only only partially implemented. Here is a list of a few of them (others can be found in the directory: https://github.com/Konsing/ECS-179-Final-Project/tree/main/PunchHell/Documents)
 
--The 10,000 word plot and gameplay design
-
--the stages of implementation
-
--Enemy and boss designs
-
--level designs
-
--player abilities
-
--projectile mechanics
-
--sound designs
-
--background style
-
--Mission UI format
+- The 10,000 word plot and gameplay design
+  
+- the stages of implementation
+  
+- Enemy and boss designs
+  
+- level designs
+  
+- player abilities
+  
+- projectile mechanics
+  
+- sound designs
+  
+- background style
+  
+- Mission UI format
 
 ### Work I did...again
 
