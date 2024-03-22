@@ -26,17 +26,32 @@ public static class StageDefinitions
                 Waypoint.FromCameraPercent(250, 50.0f, 65.0f)
         };
 
+        var enemyWaypoints2 = // Looping spiral with varying speeds and a sudden outward dash
+new List<IWaypoint>
+{
+    // Starts at the outer right, moving inwards in a spiral
+    Waypoint.FromCameraPercent(220, 90.0f, 90.0f, 0.5f),
+    // Continues spiraling inward with increasing speed
+    Waypoint.FromCameraPercent(230, 75.0f, 75.0f, 0.4f),
+    Waypoint.FromCameraPercent(240, 60.0f, 60.0f, 0.3f),
+    // Reaches the center of the spiral, pausing briefly
+    Waypoint.FromCameraPercent(250, 45.0f, 45.0f, 0.5f),
+    // Rapidly moves outward in a straight line to the edge
+    Waypoint.FromCameraPercent(300, 45.0f, 90.0f, 0.2f),
+    // Slows down as it makes a wide turn to start the spiral again
+    Waypoint.FromCameraPercent(210, 90.0f, 90.0f, 0.5f)
+};
         return new List<StageAction>
         {
                 new StageActionSpawn("Enemies/EnemyBase", new Vector3(640, 720, 0)),
                 new StageActionDialogue("Player", "I am so sick and tired of this shit"),
                 new StageActionDialogue("Enemy", "Me too dude"),
                 new StageActionDelay(5.0f),
-                new StageActionSpawn("Enemies/EnemyA", new Vector3(1100, 1100, 0), enemyAWaypoints),
+                new StageActionSpawn("Enemies/EnemyA", new Vector3(1100, 1100, 0), enemyWaypoints2),
                 new StageActionDelay(2.5f),
-                new StageActionSpawn("Enemies/EnemyA", new Vector3(1100, 1100, 0), enemyAWaypoints),
+                //new StageActionSpawn("Enemies/EnemyA", new Vector3(1100, 1100, 0), enemyAWaypoints),
                 new StageActionDelay(2.5f),
-                new StageActionSpawn("Enemies/EnemyA", new Vector3(1100, 1100, 0), enemyAWaypoints),
+                //new StageActionSpawn("Enemies/EnemyA", new Vector3(1100, 1100, 0), enemyAWaypoints),
                 new StageActionDelay(2.5f),
                 new StageActionWaitForClear()
         };
