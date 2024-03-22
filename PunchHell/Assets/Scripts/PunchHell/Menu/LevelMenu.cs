@@ -10,7 +10,7 @@ public class LevelMenu : MonoBehaviour
 
     private void Awake()
     {
-        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 3); 
+        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 6); 
 
         
         for (int i = 0; i < buttons.Length; i++)
