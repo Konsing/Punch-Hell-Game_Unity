@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,7 @@ public class StageManager : MonoBehaviour
 {
     [SerializeField]
     private int maxLives = 3;
+    public List<AudioClip> levelMusicClips = new List<AudioClip>();
 
     public static StageManager Instance { get; private set; }
     public StageActionManager ActionManager { get => actionManager; }
@@ -38,6 +40,29 @@ public class StageManager : MonoBehaviour
                 .GetComponentInChildren<Text>().text = $"Stage {currentLevel}";
             ResetStageValues();
             actionManager.BeginStage();
+
+            // Handle background music change
+            var backgroundMusic = GameObject.Find("BackgroundMusic").GetComponent<AudioSource>();
+            // Assuming you have a method to get the appropriate AudioClip based on the current level
+            AudioClip newLevelMusic = GetMusicClipForLevel(currentLevel);
+            if (backgroundMusic != null && newLevelMusic != null)
+            {
+                backgroundMusic.clip = newLevelMusic;
+                backgroundMusic.Play();
+            }
+        }
+    }
+
+    private AudioClip GetMusicClipForLevel(int level)
+    {
+        if (level - 1 < levelMusicClips.Count)
+        {
+            return levelMusicClips[level - 1];
+        }
+        else
+        {
+            Debug.LogWarning("No music clip found for level " + level);
+            return null;
         }
     }
 
@@ -151,11 +176,23 @@ public class StageManager : MonoBehaviour
         livesRemaining = maxLives;
         actionManager.SetActions(StageDefinitions.GetLevelDefinition(currentLevel));
         actionManager.BeginStage();
+
+        UpdateBackgroundMusic(currentLevel);
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+    public void UpdateBackgroundMusic(int level)
+    {
+        var backgroundMusic = GameObject.Find("BackgroundMusic").GetComponent<AudioSource>();
+        AudioClip newLevelMusic = GetMusicClipForLevel(level);
+        if (backgroundMusic != null && newLevelMusic != null)
+        {
+            backgroundMusic.clip = newLevelMusic;
+            backgroundMusic.Play();
+        }
     }
 }

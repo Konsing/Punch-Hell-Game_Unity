@@ -150,8 +150,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 1041873917609081904, guid: b81fef76e83307542aac0794191c5c64, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 0b075f5e505fe124abb124971522cbdb, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -1306,6 +1306,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxLives: 3
+  levelMusicClips:
+  - {fileID: 8300000, guid: 0b075f5e505fe124abb124971522cbdb, type: 3}
+  - {fileID: 8300000, guid: dba4f3d1ca5723a45bd7db4dbeed3aaa, type: 3}
+  - {fileID: 8300000, guid: 15190685e810e324da91ca5285adf44c, type: 3}
+  - {fileID: 8300000, guid: 1aaf5842dace94b49ba232d18122821e, type: 3}
+  - {fileID: 8300000, guid: e269a9a1a56e7e04fbff76e5c6b63301, type: 3}
+  - {fileID: 8300000, guid: 78b509304dd1ad745b80c298bb475311, type: 3}
 --- !u!114 &2099396921
 MonoBehaviour:
   m_ObjectHideFlags: 0
