@@ -18,15 +18,15 @@ public class VictoryScreen : MonoBehaviour
         int nextLevel = StageManager.Instance.Level + 1;
         StageManager.Instance.Level = nextLevel;
 
-        // Ensure the stage is reset and ready for the next level
-        StageManager.Instance.ResetStageValues(); // Reset stage values if necessary
-        StageManager.Instance.ActionManager.StopStage(); // Stop the current stage actions
+        
+        StageManager.Instance.ResetStageValues(); 
+        StageManager.Instance.ActionManager.StopStage(); 
 
-        // Begin the next stage
+        
         StageManager.Instance.ActionManager.SetActions(StageDefinitions.GetLevelDefinition(nextLevel));
         StageManager.Instance.ActionManager.BeginStage();
 
-        gameObject.SetActive(false); // Hide victory screen
+        gameObject.SetActive(false); 
     }
 
     public void OnQuitClicked()
@@ -40,13 +40,10 @@ public class VictoryScreen : MonoBehaviour
     {
         gameObject.SetActive(false);
 
-        // Reset stage values to their initial state
-        //StageManager.Instance.ResetStageValues();
+        // Stop any current stage actions
+        StageManager.Instance.ResetStageValues();
+        StageManager.Instance.ActionManager.StopStage();
     
-        // Stop the current stage actions if any are running
-        //StageManager.Instance.ActionManager.StopStage();
-    
-        // Get the current level's actions and begin the stage again
         StageManager.Instance.Level = StageManager.Instance.Level;
     }
 }

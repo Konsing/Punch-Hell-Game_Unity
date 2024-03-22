@@ -146,12 +146,6 @@ public class StageManager : MonoBehaviour
         actionManager = GetComponent<StageActionManager>();
         var prefLevel = PlayerPrefs.GetInt("CurrentLevel", 1);
         
-        // fix
-        if (prefLevel < 1 || prefLevel > 2)
-        {
-            prefLevel = 1;
-            PlayerPrefs.SetInt("CurrentLevel", 1);
-        }
 
         currentLevel = prefLevel;
         livesRemaining = maxLives;

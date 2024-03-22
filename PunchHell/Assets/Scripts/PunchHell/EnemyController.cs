@@ -107,7 +107,7 @@ public class EnemyController : MonoBehaviour
             if (PlayerController.Instance.IsPlayerBullet(bullet.Danmaku))
             {
                 bullet.Danmaku.Destroy();
-                TakeDamage(1);
+                TakeDamage(10);
             }
         }
     }
