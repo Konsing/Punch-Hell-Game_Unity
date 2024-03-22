@@ -283,15 +283,40 @@ The group began coding within too short a time before submission, and failed to 
 
 We found feedback to be surprisngly positive, with many people unfamiliar with the bullet hell genre and intrigued by its mechanics and chaotic looking screen. The main takeaway that our team found from the playtesters was that our game was hard. Very hard. That does make sense since our game was designed to be a bullet hell, a genre known for its unforgiving nature and its trial and error approach. However, we felt that if our game was too hard then it would not be very approachable and would lessen the desire to replay. Thus we decided to make the first two levels easier in order to encourage beginners to keep playing and feel a sense of progress. Another thing we noticed was that peopel often did not notice when they got hurt, so we decided to make that more obvious. Lastly, we had to explain the game mechanics in person, as our game was not as intuitive as we had hoped. Therefore we added a short but informative "how to play" tutorial at the beginning of the game.
 
+
 ## Narrative Design
 
-**Document how the narrative is present in the game via assets, gameplay systems, and gameplay.** 
+**Document how the narrative is present in the game via assets, gameplay systems, and gameplay.**
 
-The narrative closely follows the theme of rolling with the punches with the main character Jose. Jose is a janitor working for the big bad evil guy, Boss Boss, until one day he gets an unexpected promotion. He is now commander of an entire army of boxer robots, the only problem being that he immediately loses control of all of them when the boss spills coffee on the way out of the office. Unbeknownst to the entire organization, Jose is assaulted by the robot army. Just as Jose thinks he can get some respit, the company take notice of him. Being a relatively unknown element within the company, the staff assault him alongside the robots. Once again, he proves to be triumphant until Boss Boss returns and tries to kill him. Jose proves victorious. He is tired. He wants to go home. Suddenly the person who was originally supposed to stand against the big bad evil guy shows up and they duke it out. Jose once again wins!
+**By Zachary Van Vost**
 
-Each mission has a dialogue segmment displaying a portion of the story before the stage begins with backgrounds, a canvas with who is speaking, and appropriate music.
+As mentioned within "Zack of all Trades", most of my plot and gameplay was scrapped (10,000 words btw). Originally the player would be a highschooler dealing with a corrupt company and the spread of a malicious failed drug. The boss and enemies would be humans who fire fists out. Bosses would be a funny suit or security guards. Links:
 
-Dialogue box - 
+The initial sketch of the plot - https://github.com/Konsing/ECS-179-Final-Project/blob/main/Documents/Story.pdf
+
+near-final draft - https://docs.google.com/document/d/1p2P99ieAFLnA-otmrhpaOJq8ouLhLcdBULgW5sqo8cI/edit?usp=sharing
+
+**The final implementation of the story**
+
+Massively simplifying the story, the narrative now closely follows the theme of rolling with the punches with the main character Jose. Jose is a janitor working for the big bad evil guy, Boss Boss, until one day he gets an unexpected promotion. He is now commander of an entire army of boxer robots, the only problem being that he immediately loses control of all of them when the boss spills coffee on the way out of the office. Unbeknownst to the entire organization, Jose is assaulted by the robot army. Just as Jose thinks he can get some respit, the company take notice of him. Being a relatively unknown element within the company, the staff assault him alongside the robots. Once again, he proves to be triumphant until Boss Boss returns and tries to kill him. Jose proves victorious. He is tired. He wants to go home. Suddenly the person who was originally supposed to stand against the big bad evil guy shows up and they duke it out. Jose once again wins!
+
+Each mission has a dialogue segmment displaying a portion of the story before the stage begins with backgrounds, a canvas with who is speaking, and appropriate music. As missions progress, enemies get more technical. The robots are getting stronger and shoot faster, adapting to a more brutal fighting style.
+
+Dialogue box - https://github.com/Konsing/ECS-179-Final-Project/blob/main/Documents/Screenshot%202024-03-22%20154617.png
+
+Original layout design - https://github.com/Konsing/ECS-179-Final-Project/blob/main/PunchHell/Documents/Dialogue%20Exchange%20Design/Screenshot%202024-03-11%20154457.png
+
+link to plot documents (each folder contains each mission's dialogue exchange) - https://github.com/Konsing/ECS-179-Final-Project/tree/main/PunchHell/Documents/Plot
+
+Enemies are robotic and adopt to this future sci-fi style - https://github.com/Konsing/ECS-179-Final-Project/blob/main/PunchHell/Documents/Enemies/Basic/Screenshot%202024-03-10%20210358.png
+
+The font style and buttons are neon and bright - https://github.com/Konsing/ECS-179-Final-Project/blob/main/PressKit/PunchHell.png
+
+You really FEEL like you're getting assaulted by an army of robots - https://github.com/Konsing/ECS-179-Final-Project/blob/main/PunchHell/Documents/Screenshot%202024-03-22%20160300.png
+
+Projectiles are shaped like punches because Jose, the main character, is fighting for his life - https://github.com/Konsing/ECS-179-Final-Project/blob/main/PunchHell/Documents/Screenshot%202024-03-22%20160300.png
+
+By being the gameplay designer and narrative designer it allowed me to essentially take full creative responsibility for the style and design which had a nice synergy, hence why I was able to collaborate with other memebers so well to keep the narrative so consistent.
 
 
 
