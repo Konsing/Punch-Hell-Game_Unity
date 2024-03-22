@@ -59,11 +59,22 @@ You should replay any **bold text** with your relevant information. Liberally us
 
 ## Producer - Konsing Ham Lopez
 
-In my capacity as producer for our game PunchHell, I orchestrated the logistical aspects of the project, which included compiling progress reports, aggregating contributions from team members, and managing our GitHub repository. I facilitated resolution of Git-related challenges, providing guidance on stashing and pulling, and emphasizing the importance of these practices to my teammates. My role as the communication linchpin was challenging due to our varying schedules and the uneven distribution of workload among team members. Despite these challenges, we managed to rally in the final week, successfully bringing our game to completion. Beyond the conventional producer responsibilities, I took on a supportive role, assisting in various tasks such as image editing, crafting menu buttons and backgrounds, and programming the sound effects and music sliders/toggles. This effort included coding to ensure these elements were consistently functional and persisted across game sessions. I also contributed to the strategic design of enemy movements in levels 2-6, enhancing the gameplay structure established in the initial level. Reflecting on this journey, I recognize areas for improvement in my early producer role but also acknowledge the immense learning gained, which has equipped me for future leadership in game development. The project highlighted the critical importance of time management and effective communication, with a lesson learned on prioritizing the core game development over additional features.
- 
-![](Documents/KonsingImages/Quit%20Script.png) ![](Documents/KonsingImages/Git%20Commands.png) ![](Documents/KonsingImages/Buttons1.png)
+In my capacity as producer for our game PunchHell, I orchestrated the logistical aspects of the project, which included compiling progress reports, aggregating contributions from team members, and managing our GitHub repository. I facilitated resolution of Git-related challenges, providing guidance on stashing and pulling, and emphasizing the importance of these practices to my teammates. My role as the communication linchpin was challenging due to our varying schedules and the uneven distribution of workload among team members. 
+
+![](Documents/KonsingImages/Git%20Commands.png)
+
+Despite these challenges, we managed to rally in the final week, successfully bringing our game to completion. Beyond the conventional producer responsibilities, I took on a supportive role, assisting in various tasks such as image editing, crafting menu buttons and backgrounds, and programming the sound effects and music sliders/toggles and Quit Script. This effort included coding to ensure these elements were consistently functional and persisted across game sessions. 
+
+![](Documents/KonsingImages/Buttons1.png) 
+
+![](Documents/KonsingImages/Quit%20Script.png)
+
+I also contributed to the strategic design of enemy movements in levels 2-6, enhancing the gameplay structure established in the initial level. 
 
 ![](Documents/KonsingImages/Movement.png) ![](Documents/KonsingImages/Movment%202.png) ![](Documents/KonsingImages/Movement%203.png)
+
+Reflecting on this journey, I recognize areas for improvement in my early producer role but also acknowledge the immense learning gained, which has equipped me for future leadership in game development. The project highlighted the critical importance of time management and effective communication, with a lesson learned on prioritizing the core game development over additional features.
+
 
 
 ## Movement/Physics - Dan Le
@@ -267,7 +278,7 @@ asking for more feedback - https://github.com/Konsing/ECS-179-Final-Project/blob
 The group began coding within too short a time before submission, and failed to implement my remade designs, ideas, and work due to relying on an inflexible framework for bullethells: "Danmaku". Cornered, we cobbled together what little mechanics the Danmaku framework/library supported regardless of my designs. By this time, I had spent so much time on the narrative that I didn't have time to code (except for adding all the narrative) and worked on other finals.
 # Sub-Roles
 
-## Audio - Konsing Ham
+## Audio - Konsing Ham Lopez
 
 In my role focusing on the game's audio, I curated a selection of sound effects and music that aligned with PunchHell's dynamic and immersive atmosphere. The sound effects, sourced from Freesound.org and Pixabay, ranged from the mechanical whir of ship engines to the high-energy blasts of weapons fire. The music, collected from Pixabay and Free Music Archive, was exclusively in a cyberpunk style, characterized by its high-energy and futuristic tones, to match the game's fast-paced and intense gameplay.
 
@@ -284,6 +295,8 @@ Additionally, the sound effects player script was designed to manage three disti
 ![](./Documents/KonsingImages/Screenshot%202024-03-22%20155858.png) ![](./Documents/KonsingImages/Screenshot%202024-03-22%20155910.png) 
 
 ![](./Documents/KonsingImages/Screenshot%202024-03-22%20160003.png) ![](./Documents/KonsingImages/Screenshot%202024-03-22%20160019.png) 
+
+![](Documents/KonsingImages/6%20Songs%20Manager.png)
 ## Gameplay Testing
 
 **Summarize the key findings from your gameplay tests.**
