@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 4488943729008749970}
   - component: {fileID: 4649166780931431690}
   - component: {fileID: 8009728883404915121}
+  - component: {fileID: 225695887396390613}
   - component: {fileID: 1598157482080437374}
-  - component: {fileID: 9117724487122675509}
   m_Layer: 7
-  m_Name: EnemyC
+  m_Name: EnemyBase5
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1d190f84a4abb384ebfe494d2ddf1506, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3af41a8dc2a377642a8d5c8afb96fed6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -105,10 +105,10 @@ MonoBehaviour:
   powerPrefab: {fileID: 2445724203549336688, guid: d68635aa85714604081ab68b432a16a3, type: 3}
   pointPrefab: {fileID: 4769289223948220687, guid: 34ba46bac4d2bac4faa0d16481b9494d, type: 3}
   bulletPointPrefab: {fileID: 4769289223948220687, guid: 8019d65f3c15bf441a10daaad98a1455, type: 3}
-  health: 150
+  health: 300
   scoreValue: 10
-  hasPointDrop: 0
-  hasPowerDrop: 1
+  hasPointDrop: 1
+  hasPowerDrop: 0
 --- !u!198 &4649166780931431690
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -4964,21 +4964,8 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &1598157482080437374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1897567248486741309}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be9814ad7c0b30042a04e391176d9333, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _editorWaypoints: []
---- !u!61 &9117724487122675509
-BoxCollider2D:
+--- !u!60 &225695887396390613
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5013,15 +5000,48 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 30.000002, y: 16.80176}
+    oldSize: {x: 5.12, y: 5.12}
     newSize: {x: 128, y: 128}
     adaptiveTilingThreshold: 0.5
     drawMode: 1
     adaptiveTiling: 0
   m_AutoTiling: 1
-  serializedVersion: 2
-  m_Size: {x: 128, y: 128}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.63, y: -0.21}
+      - {x: 0.63, y: 0.17}
+      - {x: 0.59999996, y: 0.26}
+      - {x: 0.48999998, y: 0.41}
+      - {x: 0.32999998, y: 0.57}
+      - {x: 0.14999999, y: 0.64}
+      - {x: -0.14999999, y: 0.64}
+      - {x: -0.25, y: 0.59999996}
+      - {x: -0.38, y: 0.53}
+      - {x: -0.51, y: 0.41}
+      - {x: -0.63, y: 0.17}
+      - {x: -0.63, y: -0.19}
+      - {x: -0.59999996, y: -0.28}
+      - {x: -0.48, y: -0.47}
+      - {x: -0.29, y: -0.62}
+      - {x: -0.17999999, y: -0.64}
+      - {x: 0.13, y: -0.64}
+      - {x: 0.22, y: -0.61}
+      - {x: 0.44, y: -0.5}
+      - {x: 0.59999996, y: -0.32999998}
+  m_UseDelaunayMesh: 0
+--- !u!114 &1598157482080437374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897567248486741309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be9814ad7c0b30042a04e391176d9333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _editorWaypoints: []
 --- !u!1 &4254898879205226406
 GameObject:
   m_ObjectHideFlags: 0
@@ -5068,8 +5088,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DanmakuType: {fileID: 803028450861990050, guid: 4db4d780a184709469eaf40f20c54e35, type: 3}
   Speed:
-    _min: 200
-    _max: 200
+    _min: 220
+    _max: 220
   AngularSpeed:
     _min: 0
     _max: 0
@@ -5080,14 +5100,14 @@ MonoBehaviour:
   FrameRate: 0
   Arc:
     Count:
-      _min: 16
-      _max: 16
+      _min: 4
+      _max: 4
     ArcLength:
-      _min: 6.2831855
-      _max: 6.2831855
+      _min: 1.0471976
+      _max: 1.0471976
     Radius:
-      _min: 2
-      _max: 2
+      _min: 0
+      _max: 0
   Line:
     Count:
       _min: 1

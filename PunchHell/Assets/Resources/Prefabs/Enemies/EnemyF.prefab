@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1598157482080437374}
   - component: {fileID: 9117724487122675509}
   m_Layer: 7
-  m_Name: EnemyC
+  m_Name: EnemyF
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1d190f84a4abb384ebfe494d2ddf1506, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 497ad4e40b8078a40b2fbec1f7c33657, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -105,7 +105,7 @@ MonoBehaviour:
   powerPrefab: {fileID: 2445724203549336688, guid: d68635aa85714604081ab68b432a16a3, type: 3}
   pointPrefab: {fileID: 4769289223948220687, guid: 34ba46bac4d2bac4faa0d16481b9494d, type: 3}
   bulletPointPrefab: {fileID: 4769289223948220687, guid: 8019d65f3c15bf441a10daaad98a1455, type: 3}
-  health: 150
+  health: 100
   scoreValue: 10
   hasPointDrop: 0
   hasPowerDrop: 1
@@ -5013,7 +5013,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 30.000002, y: 16.80176}
+    oldSize: {x: 5.12, y: 5.12}
     newSize: {x: 128, y: 128}
     adaptiveTilingThreshold: 0.5
     drawMode: 1

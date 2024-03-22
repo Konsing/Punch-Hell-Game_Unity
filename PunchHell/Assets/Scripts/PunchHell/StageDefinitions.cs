@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 
 public static class StageDefinitions
@@ -13,7 +15,10 @@ public static class StageDefinitions
         1 => GetLevel1(),
         2 => GetLevel2(),
         3 => GetLevel3(),
-        _ => null,
+        4 => GetLevel4(),
+        5 => GetLevel5(),
+        6 => GetLevel6(),
+        _ => Title(),
     };
 
     private static List<StageAction> GetLevel1()
@@ -151,65 +156,167 @@ public static class StageDefinitions
                     new StageActionWaitForClear()
         };
     }
+
+    private static List<StageAction> GetLevel4()
+    {
+        var enemyDWaypoints = new List<IWaypoint>
+            {
+                // Erratic flight pattern with pauses and speed changes
+                    Waypoint.FromCameraPercent(200, 100.0f, 10.0f, 0.2f),
+                    Waypoint.FromCameraPercent(300, 50.0f, 80.0f, 1.0f),
+                    Waypoint.FromCameraPercent(150, 10.0f, 20.0f, 0.5f),
+                    Waypoint.FromCameraPercent(320, 90.0f, 90.0f, 0.8f),
+                    Waypoint.FromCameraPercent(280, 50.0f, 50.0f, 0.1f),
+                    Waypoint.FromCameraPercent(260, 50.0f, 10.0f, 0.3f),
+                    Waypoint.FromCameraPercent(220, 70.0f, 30.0f, 0.2f),
+                    Waypoint.FromCameraPercent(240, 30.0f, 70.0f, 0.4f),
+                    Waypoint.FromCameraPercent(210, 10.0f, 90.0f, 0.6f)
+            };
+
+        return new List<StageAction>
+        {  
+                    new StageActionSpawn("Enemies/EnemyBase4", new Vector3(640, 720, 0)),
+                    new StageActionDialogue("Door...apparently:", "*bursts open*"),
+                    new StageActionDialogue("Jose:", "*huff. Huff. Huff* Thank god you came Captain!"),
+                    new StageActionDialogue("Captain Pierce:", "Your tyranny ends here, intruder!"),
+                    new StageActionDialogue("Jose:", "W-what? No, I  work here. I'm actually the commander. Rex can vouche for me."),
+                    new StageActionDialogue("Rex:", "*Still dead*"),
+                    new StageActionDialogue("Jose:", "..."),
+                    new StageActionDialogue("Captain Pierce:", "..."),
+                    new StageActionDialogue("Jose:", "I surrender?"),
+                    new StageActionDialogue("Captain Pierce:", "I don't think so buddy. I've been itching to test out my elite troops, and you're the perfect guinea pig!"),
+                    new StageActionDialogue("Jose:", "*sighs*"),
+                    new StageActionDelay(5.0f),
+                    new StageActionSpawn("Enemies/EnemyD", new Vector3(200, 800, 0), enemyDWaypoints),
+                    new StageActionDelay(2.5f),
+                    new StageActionSpawn("Enemies/EnemyD", new Vector3(600, 200, 0), enemyDWaypoints),
+                    new StageActionDelay(2.5f),
+                    new StageActionSpawn("Enemies/EnemyD", new Vector3(350, 900, 0), enemyDWaypoints),
+                    new StageActionDelay(2.5f),
+                    new StageActionSpawn("Enemies/EnemyD", new Vector3(500, 100, 0), enemyDWaypoints),
+                    new StageActionDelay(2.5f),
+                    new StageActionWaitForClear()
+        };
+    }
+
+    private static List<StageAction> GetLevel5()
+    {
+        var enemyEWaypoints = new List<IWaypoint>
+            {
+                // Complex pattern combining sweeps, sudden changes, and pauses
+                    Waypoint.FromCameraPercent(200, 100.0f, 50.0f, 1.0f),
+                    Waypoint.FromCameraPercent(300, 100.0f, 90.0f, 0.2f),
+                    Waypoint.FromCameraPercent(320, 70.0f, 10.0f, 0.5f),
+                    Waypoint.FromCameraPercent(200, 0.0f, 10.0f, 2.0f),
+                    Waypoint.FromCameraPercent(350, 0.0f, 90.0f, 0.1f),
+                    Waypoint.FromCameraPercent(280, 50.0f, 50.0f, 0.7f),
+                    Waypoint.FromCameraPercent(400, 100.0f, 90.0f, 1.5f),
+                    Waypoint.FromCameraPercent(180, 50.0f, 50.0f, 2.0f)
+            };
+
+        return new List<StageAction>
+        {  
+                    new StageActionSpawn("Enemies/EnemyBase5", new Vector3(640, 720, 0)),
+                    new StageActionDialogue("Jose:", "*huff. Huff. Huff.*"),
+                    new StageActionDialogue("Captain Pierce:", "Why did you come here? Are you working with the Hero? Who are you, really?"),
+                    new StageActionDialogue("Jose:", "*huff. Huff. Huff.* I'm the janitor, like it says on my namebadge. That's what I've been trying to tell you this whole time. Boss boss killed commander Rex and promoted me, but spilled coffee on the command console on the way out."),
+                    new StageActionDialogue("Captain Pierce::", "That's unbelievable! It was a misunderstanding this whole time?"),
+                    new StageActionDialogue("Jose:", "Wait, you believed that?"),
+                    new StageActionDialogue("Captain Pierce:", "HAHAHAHAHAHAHA! NO! A janitor is singlehandedly beating our entire army!? You expect me to believe any of that is just an insult on top of injury. Boss boss is coming and he's going to kick your a-"),
+                    new StageActionDialogue(" ", "*bang*"),
+                    new StageActionDialogue("Boss boss:", "Useless."),
+                    new StageActionDialogue("Jose:", "Y-you killed him."),
+                    new StageActionDialogue("Boss boss:", "Would you have perfered that I kill you first? In my eyes, he's just as bad as you for letting this all happen. I turn my back for five seconds and my entire organization has come crashing to the ground. And worse of all, I now have to make another trip to the dry cleaners after this. Ugh. The point of this army was so I didn't have to bloody myself like this, but now...for you? I'm more than happy to intervene."),
+                    new StageActionDelay(5.0f),
+                    new StageActionSpawn("Enemies/EnemyE", new Vector3(300, 300, 0), enemyEWaypoints),
+                    new StageActionDelay(2.5f),
+                    new StageActionSpawn("Enemies/EnemyD", new Vector3(788, 567, 0), enemyEWaypoints),
+                    new StageActionDelay(2.5f),
+                    new StageActionSpawn("Enemies/EnemyE", new Vector3(400, 400, 0), enemyEWaypoints),
+                    new StageActionDelay(2.5f),
+                    new StageActionSpawn("Enemies/EnemyD", new Vector3(800, 800, 0), enemyEWaypoints),
+                    new StageActionDelay(2.5f),
+                    new StageActionWaitForClear()
+        };
+    }
+
+    private static List<StageAction> GetLevel6()
+    {
+        var enemyFWaypoints = new List<IWaypoint>
+            {
+                Waypoint.FromCameraPercent(230, 50.0f, 50.0f, 0.2f),
+                Waypoint.FromCameraPercent(240, 80.0f, 70.0f, 0.1f),
+                Waypoint.FromCameraPercent(260, 20.0f, 70.0f, 0.2f),
+                Waypoint.FromCameraPercent(280, 20.0f, 30.0f, 0.3f),
+                Waypoint.FromCameraPercent(300, 80.0f, 30.0f, 0.1f),
+                Waypoint.FromCameraPercent(320, 50.0f, 50.0f, 0.5f),
+                Waypoint.FromCameraPercent(340, 80.0f, 70.0f, 0.1f),
+                Waypoint.FromCameraPercent(360, 20.0f, 70.0f, 0.2f),
+                Waypoint.FromCameraPercent(380, 20.0f, 30.0f, 0.3f),
+                Waypoint.FromCameraPercent(400, 80.0f, 30.0f, 0.1f),
+                Waypoint.FromCameraPercent(420, 50.0f, 50.0f, 0.5f)
+            };
+
+        return new List<StageAction>
+        {  
+                    new StageActionSpawn("Enemies/EnemyBase6", new Vector3(640, 720, 0)),
+                    new StageActionDialogue("Boss boss:", "W-wait. I know you! You're Jose, the janitor I just promoted before I left!"),
+                    new StageActionDialogue("Jose:", "So you recognize me?"),
+                    new StageActionDialogue("Boss boss:", "Of course I do! I don't care about any of you tools, but I can remember a face for more than ten minutes! Rex is still on the ground. You still haven't cleaned him up!"),
+                    new StageActionDialogue("Jose:", "I just want to go home."),
+                    new StageActionDialogue("Boss boss:", "Ha! After this, you'll be lucky to get employment anywhere. I'll make sure to sink your name into the ground! I'll spread so many scandles about your reputation and your incompetency that you'll wish I had killed you on this day?"),
+                    new StageActionDialogue("Jose:", "..."),
+                    new StageActionDialogue("Robot #1:", "Re-initializing. System reboot successful. Combat data has successfully been analyzed. Combat capacity has been increased by 500%. Hello commander Jose."),
+                    new StageActionDialogue("Boss:", "Surely you don't mean to kill me. You're just a janitor. You're not an evil person like I am. I have an army of robots at my command."),
+                    new StageActionDialogue("Boss Commander Jose:", "I have your army of robots at my command. I can blow them all up if I want to so just let me go home!"),
+                    new StageActionDialogue("Hero:", "I heard all of that!"),
+                    new StageActionDialogue("Jose:", "Who are you? How did you get here?"),
+                    new StageActionDialogue("Boss:", "YOU!? Hero! You've come to foil my plans for the umpteenth time!? I will feed you to my army of... *goes into a coma lasting 8 months*"),
+                    new StageActionDialogue("Hero:", "I came to defeat Boss Boss and destroy his robot army, which has been terrorizing my village for decades! We put an end to this now!"),
+                    new StageActionDialogue("Boss:", "*Still in a fucking coma*"),
+                    new StageActionDialogue("Hero:", "What happened to him?"),
+                    new StageActionDialogue("Boss Commander Jose:", "*sweats nervously*"),
+                    new StageActionDialogue("Hero:", "Why are you being so quiet?"),
+                    new StageActionDialogue("Robot #1:", "Intruder detected. Awaiting orders from Commander Jose."),
+                    new StageActionDialogue("Hero:", "Jose? Whose...your nametag says Jose, but you're dressed like a janitor. How come you're not speaking?"),
+                    new StageActionDialogue("Boss Commander Jose:", "*gulps* If I say anything, you'll find some way to think that I somehow took over Boss boss's position and attack me."),
+                    new StageActionDialogue("Boss:", "*Unconcious* Due to delay in medical treatment, coma has been extended to 9 months."),
+                    new StageActionDialogue("Hero:", "..."),
+                    new StageActionDialogue("Jose:", "..."),
+                    new StageActionDialogue("Hero:", "You think that disguise can fool me, BOSS BOSS!?"),
+                    new StageActionDialogue("Boss Commander Jose:", "What is wrong with all of you people?"),
+                    new StageActionDelay(5.0f),
+                    new StageActionSpawn("Enemies/EnemyF", new Vector3(600, 300, 0), enemyFWaypoints),
+                    new StageActionDelay(2.5f),
+                    new StageActionSpawn("Enemies/EnemyF", new Vector3(800, 900, 0), enemyFWaypoints),
+                    new StageActionDelay(2.5f),
+                    new StageActionSpawn("Enemies/EnemyF", new Vector3(100, 750, 0), enemyFWaypoints),
+                    new StageActionDelay(2.5f),
+                    new StageActionSpawn("Enemies/EnemyF", new Vector3(800, 800, 0), enemyFWaypoints),
+                    new StageActionDelay(10f),
+                    new StageActionSpawn("Enemies/EnemyF", new Vector3(500, 600, 0), enemyFWaypoints),
+                    new StageActionDelay(5f),
+                    new StageActionSpawn("Enemies/EnemyF", new Vector3(900, 900, 0), enemyFWaypoints),
+                    new StageActionDelay(2.5f),
+                    new StageActionSpawn("Enemies/EnemyF", new Vector3(200, 200, 0), enemyFWaypoints),
+                    new StageActionDelay(2.5f),
+                    new StageActionWaitForClear()
+        };
+    }
+
+    private static List<StageAction> Title()
+    {
+
+        SceneManager.LoadSceneAsync("TitleScreen");
+        StageManager.Instance.ResetStageValues();
+        StageManager.Instance.Paused = false;
+        
+        return new List<StageAction>
+        { 
+                    new StageActionDialogue("...:", "Congratulations!"),
+                    new StageActionDelay(50f),
+                    new StageActionWaitForClear()
+        };
+
+    }
 }
-
-
-
-/*
-
-LEVEL 4 DIALOGUE
-new StageActionDialogue("Door...apparently:", "*bursts open*"),
-new StageActionDialogue("Jose:", "*huff. Huff. Huff* Thank god you came Captain!"),
-new StageActionDialogue("Captain Pierce:", "Your tyranny ends here, intruder!"),
-new StageActionDialogue("Jose:", "W-what? No, I  work here. I'm actually the commander. Rex can vouche for me."),
-new StageActionDialogue("Rex:", "*Still dead*"),
-new StageActionDialogue("Jose:", "..."),
-new StageActionDialogue("Captain Pierce:", "..."),
-new StageActionDialogue("Jose:", "I surrender?"),
-new StageActionDialogue("Captain Pierce:", "I don't think so buddy. I've been itching to test out my elite troops, and you're the perfect guinea pig!"),
-new StageActionDialogue("Jose:", "*sighs*"),
-
-
-LEVEL 5 DIALOGUE
-new StageActionDialogue("Jose:", "*huff. Huff. Huff.*"),
-new StageActionDialogue("Captain Pierce:", "Why did you come here? Are you working with the Hero? Who are you, really?"),
-new StageActionDialogue("Jose:", "*huff. Huff. Huff.* I'm the janitor, like it says on my namebadge. That's what I've been trying to tell you this whole time. Boss boss killed commander Rex and promoted me, but spilled coffee on the command console on the way out."),
-new StageActionDialogue("Captain Pierce::", "That's unbelievable! It was a misunderstanding this whole time?"),
-new StageActionDialogue("Jose:", "Wait, you believed that?"),
-new StageActionDialogue("Captain Pierce:", "HAHAHAHAHAHAHA! NO! A janitor is singlehandedly beating our entire army!? You expect me to believe any of that is just an insult on top of injury. Boss boss is coming and he's going to kick your a-"),
-new StageActionDialogue(" ", "*bang*"),
-new StageActionDialogue("Boss boss:", "Useless."),
-new StageActionDialogue("Jose:", "Y-you killed him."),
-new StageActionDialogue("Boss boss:", "Would you have perfered that I kill you first? In my eyes, he's just as bad as you for letting this all happen. I turn my back for five seconds and my entire organization has come crashing to the ground. And worse of all, I now have to make another trip to the dry cleaners after this. Ugh. The point of this army was so I didn't have to bloody myself like this, but now...for you? I'm more than happy to intervene."),
-
-
-
-
-LEVEL 6 DIALOGUE
-new StageActionDialogue("Boss boss:", "W-wait. I know you! You're Jose, the janitor I just promoted before I left!"),
-new StageActionDialogue("Jose:", "So you recognize me?"),
-new StageActionDialogue("Boss boss:", "Of course I do! I don't care about any of you tools, but I can remember a face for more than ten minutes! Rex is still on the ground. You still haven't cleaned him up!"),
-new StageActionDialogue("Jose:", "I just want to go home."),
-new StageActionDialogue("Boss boss:", "Ha! After this, you'll be lucky to get employment anywhere. I'll make sure to sink your name into the ground! I'll spread so many scandles about your reputation and your incompetency that you'll wish I had killed you on this day?"),
-new StageActionDialogue("Jose:", "..."),
-new StageActionDialogue("Robot #1:", "Re-initializing. System reboot successful. Combat data has successfully been analyzed. Combat capacity has been increased by 500%. Hello commander Jose."),
-new StageActionDialogue("Boss:", "Surely you don't mean to kill me. You're just a janitor. You're not an evil person like I am. I have an army of robots at my command."),
-new StageActionDialogue("Boss Commander Jose:", "I have your army of robots at my command. I can blow them all up if I want to so just let me go home!"),
-new StageActionDialogue("Hero:", "I heard all of that!"),
-new StageActionDialogue("Jose:", "Who are you? How did you get here?"),
-new StageActionDialogue("Boss:", "YOU!? Hero! You've come to foil my plans for the umpteenth time!? I will feed you to my army of... *goes into a coma lasting 8 months*"),
-new StageActionDialogue("Hero:", "I came to defeat Boss Boss and destroy his robot army, which has been terrorizing my village for decades! We put an end to this now!"),
-new StageActionDialogue("Boss:", "*Still in a fucking coma*"),
-new StageActionDialogue("Hero:", "What happened to him?"),
-new StageActionDialogue("Boss Commander Jose:", "*sweats nervously*"),
-new StageActionDialogue("Hero:", "Why are you being so quiet?"),
-new StageActionDialogue("Robot #1:", "Intruder detected. Awaiting orders from Commander Jose."),
-new StageActionDialogue("Hero:", "Jose? Whose...your nametag says Jose, but you're dressed like a janitor. How come you're not speaking?"),
-new StageActionDialogue("Boss Commander Jose:", "*gulps* If I say anything, you'll find some way to think that I somehow took over Boss boss's position and attack me."),
-new StageActionDialogue("Boss:", "*Unconcious* Due to delay in medical treatment, coma has been extended to 9 months."),
-new StageActionDialogue("Hero:", "..."),
-new StageActionDialogue("Jose:", "..."),
-new StageActionDialogue("Hero:", "You think that disguise can fool me, BOSS BOSS!?"),
-new StageActionDialogue("Boss Commander Jose:", "What is wrong with all of you people?"),
-
-*/
