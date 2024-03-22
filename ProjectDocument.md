@@ -57,16 +57,14 @@ Here is an example:
 
 You should replay any **bold text** with your relevant information. Liberally use the template when necessary and appropriate.
 
-## Producer
+## Producer - Konsing Ham Lopez
 
-**Describe the steps you took in your role as producer. Typical items include group scheduling mechanisms, links to meeting notes, descriptions of team logistics problems with their resolution, project organization tools (e.g., timelines, dependency/task tracking, Gantt charts, etc.), and repository management methodology.**
+In my capacity as producer for our game PunchHell, I orchestrated the logistical aspects of the project, which included compiling progress reports, aggregating contributions from team members, and managing our GitHub repository. I facilitated resolution of Git-related challenges, providing guidance on stashing and pulling, and emphasizing the importance of these practices to my teammates. My role as the communication linchpin was challenging due to our varying schedules and the uneven distribution of workload among team members. Despite these challenges, we managed to rally in the final week, successfully bringing our game to completion. Beyond the conventional producer responsibilities, I took on a supportive role, assisting in various tasks such as image editing, crafting menu buttons and backgrounds, and programming the sound effects and music sliders/toggles. This effort included coding to ensure these elements were consistently functional and persisted across game sessions. I also contributed to the strategic design of enemy movements in levels 2-6, enhancing the gameplay structure established in the initial level. Reflecting on this journey, I recognize areas for improvement in my early producer role but also acknowledge the immense learning gained, which has equipped me for future leadership in game development. The project highlighted the critical importance of time management and effective communication, with a lesson learned on prioritizing the core game development over additional features.
+ 
+![](Documents/KonsingImages/Quit%20Script.png) ![](Documents/KonsingImages/Git%20Commands.png) ![](Documents/KonsingImages/Buttons.png)
 
-## User Interface and Input
+![](Documents/KonsingImages/Movement.png) ![](Documents/KonsingImages/Movment%202.png) ![](Documents/KonsingImages/Movement%203.png)
 
-**Describe your user interface and how it relates to gameplay. This can be done via the template.**
-**Describe the default input configuration.**
-
-**Add an entry for each platform or input style your project supports.**
 
 ## Movement/Physics - Dan Le
 
@@ -269,14 +267,23 @@ asking for more feedback - https://github.com/Konsing/ECS-179-Final-Project/blob
 The group began coding within too short a time before submission, and failed to implement my remade designs, ideas, and work due to relying on an inflexible framework for bullethells: "Danmaku". Cornered, we cobbled together what little mechanics the Danmaku framework/library supported regardless of my designs. By this time, I had spent so much time on the narrative that I didn't have time to code (except for adding all the narrative) and worked on other finals.
 # Sub-Roles
 
-## Audio
+## Audio - Konsing Ham
 
-**List your assets, including their sources and licenses.**
+In my role focusing on the game's audio, I curated a selection of sound effects and music that aligned with PunchHell's dynamic and immersive atmosphere. The sound effects, sourced from Freesound.org and Pixabay, ranged from the mechanical whir of ship engines to the high-energy blasts of weapons fire. The music, collected from Pixabay and Free Music Archive, was exclusively in a cyberpunk style, characterized by its high-energy and futuristic tones, to match the game's fast-paced and intense gameplay.
 
-**Describe the implementation of your audio system.**
+![](./Documents/KonsingImages/SFX.png) 
 
-**Document the sound style.** 
+![](./Documents/KonsingImages/Sounds.png) 
 
+To ensure players could personalize their audio experience, I implemented volume sliders and toggles for the music and sound effects, which were integrated into the game through the VolumeSettings.cs script. This script was connected to a sound mixer named Main, which was tied to every sound game object source within the game. This setup meant that adjusting the sliders for SFX or Music dynamically altered the audio levels across all levels and even the title screen, providing a seamless and consistent experience.
+
+![](./Documents/KonsingImages/Volume%20TogglesSliders.png) 
+
+Additionally, the sound effects player script was designed to manage three distinct button sounds in the main menu, ensuring that each interaction felt responsive and satisfying. The VolumeSettings script, on the other hand, managed all the audio toggles and sliders, offering players a comprehensive control over their audio experience. Changes were also made to the StageManager.cs script to facilitate the transition between songs as players progressed through levels. An issue initially arose where the music would only play when selecting 'restart' or 'new game,' but this was rectified by updating the method in the StageManager script, ensuring that music would play correctly from the beginning of each session. The stagemanager contains a list that holds all 6 tracks and changes between them depending on the level.
+
+![](./Documents/KonsingImages/Screenshot%202024-03-22%20155858.png) ![](./Documents/KonsingImages/Screenshot%202024-03-22%20155910.png) 
+
+![](./Documents/KonsingImages/Screenshot%202024-03-22%20160003.png) ![](./Documents/KonsingImages/Screenshot%202024-03-22%20160019.png) 
 ## Gameplay Testing
 
 **Summarize the key findings from your gameplay tests.**
