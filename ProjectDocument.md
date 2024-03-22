@@ -265,6 +265,9 @@ asking for more feedback - https://github.com/Konsing/ECS-179-Final-Project/blob
 
 **Why other gameplay Mechanics were implemented (The descrepency between design and implementation)**
 The group began coding within too short a time before submission, and failed to implement my remade designs, ideas, and work due to relying on an inflexible framework for bullethells: "Danmaku". Cornered, we cobbled together what little mechanics the Danmaku framework/library supported regardless of my designs. By this time, I had spent so much time on the narrative that I didn't have time to code (except for adding all the narrative) and worked on other finals.
+
+**Comment from Dan on the preceding point**: Danmaku is not an "inflexible" framework. If you know what it actually does, you will realize that it allows for greater flexibility due to the composable nature of the patterns it supports, along with the ability to implement bullet modifiers to allow for acceleration and homing. It is a very barebones library and the "inflexibility" that you describe is the result of using their example bullet patterns as a placeholder for when I would develop actual bullet scripting. The real inflexibility is in the time constraint that I had in developing scriptability for bullets in the same manner that StageActionManager scripts the stage. This is not a framework issue.
+
 # Sub-Roles
 
 ## Audio - Konsing Ham
