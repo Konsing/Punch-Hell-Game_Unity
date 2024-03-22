@@ -266,7 +266,7 @@ Projectile image - https://github.com/Konsing/ECS-179-Final-Project/blob/main/Pu
 asking for more feedback - https://github.com/Konsing/ECS-179-Final-Project/blob/main/PunchHell/Documents/Evidence%20of%20Producer%20role/Screenshot%202024-03-22%20143106.png
 
 **Why other gameplay Mechanics were implemented (The descrepency between design and implementation)**
-The group began coding within too short a time before submission, and failed to implement my remade designs, ideas, and work due to relying on an inflexible framework for bullethells: "Danmaku". Cornered, we cobbled together what little mechanics the Danmaku framework/library supported regardless of my designs. I was only made aware of this fact 30 minutes before the demonstration, hence why my own contribution seems to pale in comparison.
+The group began coding within too short a time before submission, and failed to implement my remade designs, ideas, and work due to relying on an inflexible framework for bullethells: "Danmaku". Cornered, we cobbled together what little mechanics the Danmaku framework/library supported regardless of my designs. By this time, I had spent so much time on the narrative that I didn't have time to code (except for adding all the narrative) and worked on other finals.
 # Sub-Roles
 
 ## Audio
