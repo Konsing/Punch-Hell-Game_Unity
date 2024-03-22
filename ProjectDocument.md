@@ -198,9 +198,13 @@ I made a guide for the group to build the framework of the game in case their si
 ![](./ExampleImages/heart_drawing.png) 
 
 Unfortunately, by the time the group had finished with other classes, the depth of the game became too overwhelming to handle within the remaining timeframe. Due to many sudden complaints of misunderstanding and miscommunication, I reworked the game from the ground up with much more simplicity. I contributed a lot more to other roles in reworking the game, including sprite design, UI, and producer.
-Simpiler story - 
+
+Simpiler story - https://github.com/Konsing/ECS-179-Final-Project/blob/main/Documents/FinalStory.txt
+
 Simple ability - 
+
 Simple level design - 
+
 
 Still, the group became bogged down to the point we had to rely on a framework for the game to operate. Unfortunately, due to the constraints of the library, many ideas, designs, and work was once again unfulfilled. In fact, new mechanics which the framework supported replaced my own designs. For example the "Graze" ability was never discussed, yet was implemented due to necessetating some sort of player ability to help navigate the rain of bullets. In order to make a complete game on time, gameplay design was sacrificed in order to cobble together whatever the library could handle. Dan Le, Ahmed, and Konsing salvaged what they could from the library. Due to the lateness and how busy I was with other tasks, having put them off due to working on gameplay, I could only work on the dialogue code.
 Enemy design - [ECS-179-Final-Project/Documents/MechanicsDraft/Boss and Enemy Variants.pdf](https://github.com/Konsing/ECS-179-Final-Project/blob/main/Documents/MechanicsDraft/Boss%20and%20Enemy%20Variants.pdf)
