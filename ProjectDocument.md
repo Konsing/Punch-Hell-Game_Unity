@@ -177,6 +177,33 @@ private static List<StageAction> GetLevel1()
     }
 ```
 which is similar but does not provide the brief convenience and reloadability of a script written in a DSL designed for bullet hell games. I also wanted to create an editor tool that would allow a developer to drag along the screen to define a list of waypoints instead of painstakingly entering them in one by one into a list.
+## The Zack of all Trades
+
+**Document the game states and game data you managed and the design patterns you used to complete your task.**
+
+### The section below this header was authored by Zachary Van Vorst who was responsible for Gameplay Logic design, however due to frequent miscommunication and the group's late start (due to finals, test, etc), became a sort of jack of all trades
+The awkward label is due to the unique circumstances regarding my own contributions. The group initially decided on a bullethell/light novel format for the game, with heavy emphasis on the variety of enemies, level design, and story. As the gameplay designer, I designed different enemies, attack patterns, level designs, abilities, menus, sprites, menus, and just about every aspect of the game itself on my own. I included video examples from other similar games to reference, sprites, examples of the backgrounds, how I wanted the font to look like, the general theme for visual design and audio queues. I frequently asked for questions regarding feedback and questions, however due to the group being busy with other classes, I continued my work, taking the collective silence as agreement.
+Here are a few examples of my early designs:
+Rough sketch of the story - 
+Rough sketch of gameplay mechanics - 
+Initial story document containing level designs - 
+Initial level design - 
+
+I made a guide for the group to build the framework of the game in case their silence meant they had no direction - 
+
+Unfortunately, by the time the group had finished with other classes, the depth of the game became too overwhelming to handle within the remaining timeframe. Due to many sudden complaints of misunderstanding and miscommunication, I reworked the game from the ground up with much more simplicity. I contributed a lot more to other roles in reworking the game, including sprite design, UI, and producer.
+Simpiler story - 
+Simple ability - 
+Simple level design - 
+
+Still, the group became bogged down to the point we had to rely on a framework for the game to operate. Unfortunately, due to the constraints of the library, many ideas, designs, and work was once again unfulfilled. In fact, new mechanics which the framework supported replaced my own designs. For example the "Graze" ability was never discussed, yet was implemented due to necessetating some sort of player ability to help navigate the rain of bullets. In order to make a complete game on time, gameplay design was sacrificed in order to cobble together whatever the library could handle. Dan Le, Ahmed, and Konsing salvaged what they could from the library. Due to the lateness and how busy I was with other tasks, having put them off due to working on gameplay, I could only work on the dialogue code.
+Enemy design - 
+
+
+
+
+
+
 
 # Sub-Roles
 
@@ -197,6 +224,11 @@ We found feedback to be surprisngly positive, with many people unfamiliar with t
 ## Narrative Design
 
 **Document how the narrative is present in the game via assets, gameplay systems, and gameplay.** 
+The narrative closely follows the theme of rolling with the punches with the main character Jose. Jose is a janitor working for the big bad evil guy, Boss Boss, until one day he gets an unexpected promotion. He is now commander of an entire army of boxer robots, the only problem being that he immediately loses control of all of them when the boss spills coffee on the way out of the office. Unbeknownst to the entire organization, Jose is assaulted by the robot army. Just as Jose thinks he can get some respit, the company take notice of him. Being a relatively unknown element within the company, the staff assault him alongside the robots. Once again, he proves to be triumphant until Boss Boss returns and tries to kill him. Jose proves victorious. He is tired. He wants to go home. Suddenly the person who was originally supposed to stand against the big bad evil guy shows up and they duke it out. Jose once again wins!
+
+Each mission has a dialogue segmment displaying a portion of the story before the stage begins with backgrounds, a canvas with who is speaking, and appropriate music.
+
+
 
 ## Press Kit and Trailer
 
