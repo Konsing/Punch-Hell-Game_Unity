@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,34 +7,52 @@ using UnityEngine.UI;
 
 public class VolumeSettings : MonoBehaviour
 {
-    [SerializeField] Slider volumeSlider;
+    [SerializeField] string _volumeParameter = "MasterVolume";
+    [SerializeField] AudioMixer _mixer;
+    [SerializeField] Slider _slider;
+    [SerializeField] float _multiplier = 30;
+    [SerializeField] private Toggle _toggle;
+    private bool _disableToggleEvent;
 
-    void Start()
+    void Awake()
     {
-        if(PlayerPrefs.HasKey("musicVolume"))
+        _slider.onValueChanged.AddListener(HandleSliderValueChanged);
+        _toggle.onValueChanged.AddListener(HandleToggleValueChanged);
+    }
+
+    private void HandleToggleValueChanged(bool enableSound)
+    {
+        if(_disableToggleEvent)
         {
-            PlayerPrefs.SetFloat("musicVolume", 1);
-            Load();
+            return;
+        }
+
+        if(enableSound)
+        {
+            _slider.value = _slider.maxValue;
         }
         else
         {
-            Load();
+            _slider.value = _slider.minValue;
         }
     }
 
-    public void ChangeVolume()
+    private void OnDisable()
     {
-        AudioListener.volume = volumeSlider.value;
-        Save();
+        PlayerPrefs.SetFloat(_volumeParameter, _slider.value);
     }
 
-    private void Load()
+    private void HandleSliderValueChanged(float value)
     {
-        volumeSlider.value = PlayerPrefs.GetFloat("musicVolume");
+        float volume = Mathf.Log10(Mathf.Max(value, 0.0001f)) * _multiplier;
+        _mixer.SetFloat(_volumeParameter, volume);
+        _disableToggleEvent = true;
+        _toggle.isOn = _slider.value > _slider.minValue;
+        _disableToggleEvent = false;
     }
 
-    private void Save()
+    void Start()
     {
-        PlayerPrefs.SetFloat("musicVolume", volumeSlider.value);
+        _slider.value = PlayerPrefs.GetFloat(_volumeParameter, _slider.value);
     }
 }
