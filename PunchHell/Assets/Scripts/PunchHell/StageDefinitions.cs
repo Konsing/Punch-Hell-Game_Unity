@@ -12,6 +12,7 @@ public static class StageDefinitions
     {
         1 => GetLevel1(),
         2 => GetLevel2(),
+        3 => GetLevel3(),
         _ => null,
     };
 
@@ -68,67 +69,93 @@ public static class StageDefinitions
     }
 
     private static List<StageAction> GetLevel2()
-{
-    var enemyAWaypoints = new List<IWaypoint>
-        {
-                Waypoint.FromCameraPercent(250, 85.0f, 75.0f),
-                Waypoint.FromCameraPercent(250, 65.0f, 85.0f),
-                Waypoint.FromCameraPercent(250, 45.0f, 55.0f),
-                Waypoint.FromCameraPercent(250, 25.0f, 65.0f),
-                Waypoint.FromCameraPercent(250, 50.0f, 80.0f)
-        };
-    
-    return new List<StageAction>
     {
-                new StageActionSpawn("Enemies/EnemyBase2", new Vector3(640, 720, 0)),
-                new StageActionDialogue("Jose:", "*huff. Huff. Huff.*"),
-                new StageActionDialogue("Robot #1:", "Target...has withstood assault."),
-                new StageActionDialogue("Jose:", "Someone! I need some help in here! I'm trapped."),
-                new StageActionDialogue("Robot #1:", "Re-anylizing target's capabilities..."),
-                new StageActionDialogue("Jose:", "Why are the controls to the door locked?"),
-                new StageActionDialogue("Robot #2:", "Adjusting attack routine."),
-                new StageActionDialogue("Jose:", "No, no, no, the coffee must have splattered onto the door controls during the fight!"),
-                new StageActionDialogue("Robot #3:", "Homing sequence initialzied."),
-                new StageActionDialogue("Jose:", "A camera! Help! I'm in here! Help! Can you see me? Oh wait, I have the number of the security guy. I can call him and get him to let me out."),
-                new StageActionDialogue("Robot #1:", "Commense attack!"),
-                new StageActionDialogue("Jose:", "Why do I have to do this, man?"),
-                new StageActionDelay(5.0f),
-                new StageActionSpawn("Enemies/EnemyB", new Vector3(800, 800, 0), enemyAWaypoints),
-                new StageActionDelay(2.5f),
-                new StageActionSpawn("Enemies/EnemyB", new Vector3(600, 800, 0), enemyAWaypoints),
-                new StageActionDelay(2.5f),
-                new StageActionSpawn("Enemies/EnemyB", new Vector3(500, 900, 0), enemyAWaypoints),
-                new StageActionDelay(2.5f),
-                new StageActionSpawn("Enemies/EnemyB", new Vector3(250, 300, 0), enemyAWaypoints),
-                new StageActionDelay(2.5f),
-                new StageActionWaitForClear()
-    };
+        var enemyBWaypoints = new List<IWaypoint>
+            {
+                    Waypoint.FromCameraPercent(250, 85.0f, 75.0f),
+                    Waypoint.FromCameraPercent(250, 65.0f, 85.0f),
+                    Waypoint.FromCameraPercent(250, 45.0f, 55.0f),
+                    Waypoint.FromCameraPercent(250, 25.0f, 65.0f),
+                    Waypoint.FromCameraPercent(250, 50.0f, 80.0f)
+            };
+
+        return new List<StageAction>
+        {
+                    new StageActionSpawn("Enemies/EnemyBase2", new Vector3(640, 720, 0)),
+                    new StageActionDialogue("Jose:", "*huff. Huff. Huff.*"),
+                    new StageActionDialogue("Robot #1:", "Target...has withstood assault."),
+                    new StageActionDialogue("Jose:", "Someone! I need some help in here! I'm trapped."),
+                    new StageActionDialogue("Robot #1:", "Re-anylizing target's capabilities..."),
+                    new StageActionDialogue("Jose:", "Why are the controls to the door locked?"),
+                    new StageActionDialogue("Robot #2:", "Adjusting attack routine."),
+                    new StageActionDialogue("Jose:", "No, no, no, the coffee must have splattered onto the door controls during the fight!"),
+                    new StageActionDialogue("Robot #3:", "Homing sequence initialzied."),
+                    new StageActionDialogue("Jose:", "A camera! Help! I'm in here! Help! Can you see me? Oh wait, I have the number of the security guy. I can call him and get him to let me out."),
+                    new StageActionDialogue("Robot #1:", "Commense attack!"),
+                    new StageActionDialogue("Jose:", "Why do I have to do this, man?"),
+                    new StageActionDelay(5.0f),
+                    new StageActionSpawn("Enemies/EnemyB", new Vector3(800, 800, 0), enemyBWaypoints),
+                    new StageActionDelay(2.5f),
+                    new StageActionSpawn("Enemies/EnemyB", new Vector3(600, 800, 0), enemyBWaypoints),
+                    new StageActionDelay(2.5f),
+                    new StageActionSpawn("Enemies/EnemyB", new Vector3(500, 900, 0), enemyBWaypoints),
+                    new StageActionDelay(2.5f),
+                    new StageActionSpawn("Enemies/EnemyB", new Vector3(250, 300, 0), enemyBWaypoints),
+                    new StageActionDelay(2.5f),
+                    new StageActionWaitForClear()
+        };
+    }
+
+    private static List<StageAction> GetLevel3()
+    {
+        var enemyCWaypoints = new List<IWaypoint>
+            {
+                // Looping spiral with varying speeds and a sudden outward dash
+                    Waypoint.FromCameraPercent(220, 90.0f, 90.0f, 0.5f),
+                    Waypoint.FromCameraPercent(230, 75.0f, 75.0f, 0.4f),
+                    Waypoint.FromCameraPercent(240, 60.0f, 60.0f, 0.3f),
+                    Waypoint.FromCameraPercent(250, 45.0f, 45.0f, 0.5f),
+                    Waypoint.FromCameraPercent(300, 45.0f, 90.0f, 0.2f),
+                    Waypoint.FromCameraPercent(210, 90.0f, 90.0f, 0.5f)
+            };
+
+        return new List<StageAction>
+        {  
+                    new StageActionSpawn("Enemies/EnemyBase3", new Vector3(640, 720, 0)),
+                    new StageActionDialogue("Camera guy:", "zzzzzzzz"),
+                    new StageActionDialogue("A door or some shit idk:", "*Bang!*"),
+                    new StageActionDialogue("Camera guy:", "zzzzzzzz"),
+                    new StageActionDialogue("Another door or some shit, still idk:", "*Clang!*"),
+                    new StageActionDialogue("Camera guy:", "Huh?"),
+                    new StageActionDialogue("READ THE NAMES OF THE SFX!", "*Rumble*"),
+                    new StageActionDialogue("Camera guy:", "Oh, that door sounds mighty suspicious *presses console buttons*"),
+                    new StageActionDialogue("Thank fuck...", "..."),
+                    new StageActionDialogue("Voice through a speaker:", "What is the situation?"),
+                    new StageActionDialogue("Camera guy:", "This is the pager speaking. I heard a door or some shit idk what it was. We have a major situation! Commander Rex has been slain. The intruder is attempting to mess with the main controller of the entire army! Our entire operation could be dismantled at this rate."),
+                    new StageActionDialogue("Voice through a speaker:", "WHAT!? A DOOR OR SOME SHIT IDK!? THATS A LEVEL 8 EMERGENCY!"),
+                    new StageActionDialogue("Camera guy:", "Those handbooks were always very specific about this sort of thing..."),
+                    new StageActionDialogue("Voice through a speaker:", "It speaks to our boss's superior intellect, but we can discuss that later. For now, signal the alarm!"),
+                    new StageActionDialogue("Camera guy:", "Thank you Captain Pierce. You're elite troops should do the job just fine."),
+                    new StageActionDialogue("Voice through a speaker:", "How is the situation right now? How many intruders? Are the robots stalling him?"),
+                    new StageActionDialogue("Camera guy:", "It appears so. Each time he beats them he just keeps waving his arms around at the camera, they recalculate their pattern of attack, and they fight again. It must be some kind of mind-game to lower our morale. He's taunting us!"),
+                    new StageActionDialogue("phone:", "*ringing*"),
+                    new StageActionDialogue("Jose, fighting for his life:", "*ringing* come on... *ringing* why isn't he picking up?"),
+                    new StageActionDialogue("Camera guy:", "*click* Sorry for the distraction, captain. I'll mute my phone right away. I'm signalling the highest alert level and I'll get ahold of Boss Boss!"),
+                    new StageActionDelay(5.0f),
+                    new StageActionSpawn("Enemies/EnemyC", new Vector3(800, 800, 0), enemyCWaypoints),
+                    new StageActionDelay(2.5f),
+                    new StageActionSpawn("Enemies/EnemyC", new Vector3(600, 800, 0), enemyCWaypoints),
+                    new StageActionDelay(2.5f),
+                    new StageActionSpawn("Enemies/EnemyC", new Vector3(500, 900, 0), enemyCWaypoints),
+                    new StageActionDelay(2.5f),
+                    new StageActionWaitForClear()
+        };
+    }
 }
-}
+
+
 
 /*
-
-LEVEL 3 DIALOGUE
-new StageActionDialogue("Camera guy:", "zzzzzzzz"),
-new StageActionDialogue("A door or some shit idk:", "*Bang!*"),
-new StageActionDialogue("Camera guy:", "zzzzzzzz"),
-new StageActionDialogue("Another door or some shit, still idk:", "*Clang!*"),
-new StageActionDialogue("Camera guy:", "Huh?"),
-new StageActionDialogue("READ THE NAMES OF THE SFX!", "*Rumble*"),
-new StageActionDialogue("Camera guy:", "Oh, that door sounds mighty suspicious *presses console buttons*"),
-new StageActionDialogue("Thank fuck...", "..."),
-new StageActionDialogue("Voice through a speaker:", "What is the situation?"),
-new StageActionDialogue("Camera guy:", "This is the pager speaking. I heard a door or some shit idk what it was. We have a major situation! Commander Rex has been slain. The intruder is attempting to mess with the main controller of the entire army! Our entire operation could be dismantled at this rate."),
-new StageActionDialogue("Voice through a speaker:", "WHAT!? A DOOR OR SOME SHIT IDK!? THATS A LEVEL 8 EMERGENCY!"),
-new StageActionDialogue("Camera guy:", "Those handbooks were always very specific about this sort of thing..."),
-new StageActionDialogue("Voice through a speaker:", "It speaks to our boss's superior intellect, but we can discuss that later. For now, signal the alarm!"),
-new StageActionDialogue("Camera guy:", "Thank you Captain Pierce. You're elite troops should do the job just fine."),
-new StageActionDialogue("Voice through a speaker:", "How is the situation right now? How many intruders? Are the robots stalling him?"),
-new StageActionDialogue("Camera guy:", "It appears so. Each time he beats them he just keeps waving his arms around at the camera, they recalculate their pattern of attack, and they fight again. It must be some kind of mind-game to lower our morale. He's taunting us!"),
-new StageActionDialogue("phone:", "*ringing*"),
-new StageActionDialogue("Jose, fighting for his life:", "*ringing* come on... *ringing* why isn't he picking up?"),
-new StageActionDialogue("Camera guy:", "*click* "Sorry for the distraction, captain. I'll mute my phone right away. I'm signalling the highest alert level and I'll get ahold of Boss Boss!"),
-
 
 LEVEL 4 DIALOGUE
 new StageActionDialogue("Door...apparently:", "*bursts open*"),

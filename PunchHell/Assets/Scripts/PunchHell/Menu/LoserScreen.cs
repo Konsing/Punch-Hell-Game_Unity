@@ -32,6 +32,7 @@ public class LoserScreen : MonoBehaviour
         gameObject.SetActive(false);
 
         // Stop any current stage actions
+        StageManager.Instance.ResetStageValues();
         StageManager.Instance.ActionManager.StopStage();
     
         StageManager.Instance.Level = StageManager.Instance.Level;

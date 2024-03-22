@@ -61,6 +61,9 @@ public class StageActionManager : MonoBehaviour
     {
         while (currentAction < actions.Count)
         {
+            FindFirstObjectByType<VictoryScreen>(FindObjectsInactive.Include).gameObject.SetActive(false);
+            
+
             StageAction action = actions[currentAction];
 
             if (action is StageActionDelay delay)
