@@ -119,7 +119,7 @@ Due to the simplicity of the shoot-em up, we had very little animation, and what
 
 ![](PunchHell/Assets/Resources/Sprites/Laser_low_strength.png) ![](PunchHell/Assets/Resources/Sprites/Laser_half_strength.png) ![](PunchHell/Assets/Resources/Sprites/Laser_full_strength.png)
 
-
+In terms of coding the visuals the main thing I did was try to create changing backgrounds based on the state of the game. Originally we had a black screen which we found to be boring. So we wanted the background to change based on When there is a story/dialogue segment we planned for the background to change according to the plot. 
 ## Game Logic
 
 **Document the game states and game data you managed and the design patterns you used to complete your task.**
@@ -190,9 +190,9 @@ which is similar but does not provide the brief convenience and reloadability of
 
 ## Gameplay Testing
 
-**Add a link to the full results of your gameplay tests.**
-
 **Summarize the key findings from your gameplay tests.**
+
+We found feedback to be surprisngly positive, with many people unfamiliar with the bullet hell genre and intrigued by its mechanics and chaotic looking screen. The main takeaway that our team found from the playtesters was that our game was hard. Very hard. That does make sense since our game was designed to be a bullet hell, a genre known for its unforgiving nature and its trial and error approach. However, we felt that if our game was too hard then it would not be very approachable and would lessen the desire to replay. Thus we decided to make the first two levels easier in order to encourage beginners to keep playing and feel a sense of progress. Another thing we noticed was that peopel often did not notice when they got hurt, so we decided to make that more obvious. Lastly, we had to explain the game mechanics in person, as our game was not as intuitive as we had hoped. Therefore we added a short but informative "how to play" tutorial at the beginning of the game.
 
 ## Narrative Design
 
