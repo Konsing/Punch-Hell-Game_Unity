@@ -1,0 +1,10 @@
+Flies from top of the screen to the bottom of the screen while not doing anything. When they are hit by a projectile, they explode, dealing damage to anything around it. Also despawn any projectiles in the blast radius.
+
+Explosion damage: 100
+(player damage is calculated as if they touched a basic projectile)
+
+Radius: 15
+
+Health: 1
+
+Speed: 1/4 player speed

@@ -1,0 +1,11 @@
+ChargeTime: 3.5 seconds
+
+Speed: 3/4 player speed
+
+Damage: Depends on difficulty.
+	Easy: 1/4 heart
+	Medium: 1/2 heart
+	Hard: 1 heart
+	Impossible: DEATH
+
+Adjustment speed: 1/2 player speed. Cannot instantly turn towards player - large turn radius.

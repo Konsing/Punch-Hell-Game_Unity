@@ -1,0 +1,27 @@
+Moving camera that keeps the player moving with it when no buttons are pressed
+
+Player cannot move outside of the camera bounds
+
+CameraSpeed: 5
+
+CameraDirection: Upwards
+
+Enemy Spawnpoints:
+Top of the screen at one of 17 evenly distributed locations (hidden to the player)
+
+Despawn points:
+After projectiles, enemies, etc leave the screen going left, right, or downwards, they should despawn. They are not trapped within the bounds of the camera.
+
+Activate transition into/out of dialogue scenes after duration of the mission is over or boss is defeated.
+
+Example for a 2 min mission, if player is not dead, play the mission success screen.
+HOWEVER for a boss fight mission, the mission only ends after the boss is defeated
+	NOTE: The exception to this is when there is a tutorial segment within the mission explaining something.
+
+Example:
+	timer == 0.00
+	"Hi, welcome to..." Press A to continue
+	"Here is the health" press A to continue
+	"This is the ___ ability" Press A to continue
+	"good luck" Press A to continue.
+Timer should still be 0.00. Mission has not started yet since tutorial time is not included.

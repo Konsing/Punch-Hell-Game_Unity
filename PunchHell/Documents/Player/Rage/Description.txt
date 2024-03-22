@@ -1,0 +1,11 @@
+Rage ability gradually fills up
+When full, clicking twice in a row will make a burst of projectiles that spread out.
+make sure this doesn't damage the player
+
+
+bullet count per ring: 20
+ring count: 2
+speed: base projectile speed. 1/2 player speed I think?
+recharge Rate: 1
+Capacity: 40
+Starting capacity: 0

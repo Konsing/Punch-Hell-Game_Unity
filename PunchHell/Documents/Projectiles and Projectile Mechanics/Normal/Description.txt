@@ -1,0 +1,10 @@
+ChargeTime: 3 seconds
+
+Speed: Player speed
+
+Damage: Depends on difficulty.
+	Easy: 1/4 heart
+	Medium: 1/2 heart
+	Hard: 1 heart
+	Impossible: DEATH
+
