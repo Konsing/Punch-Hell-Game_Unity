@@ -182,7 +182,41 @@ which is similar but does not provide the brief convenience and reloadability of
 **Document the game states and game data you managed and the design patterns you used to complete your task.**
 
 ### The section below this header was authored by Zachary Van Vorst who was responsible for Gameplay Logic design, however due to frequent miscommunication and the group's late start (due to finals, test, etc), became a sort of jack of all trades
-The awkward label is due to the unique circumstances regarding my own contributions. The group initially decided on a bullethell/light novel format for the game, with heavy emphasis on the variety of enemies, level design, and story. As the gameplay designer, I designed different enemies, attack patterns, level designs, abilities, menus, sprites, menus, and just about every aspect of the game itself on my own. I included video examples from other similar games to reference, sprites, examples of the backgrounds, how I wanted the font to look like, the general theme for visual design and audio queues. I frequently asked for questions regarding feedback and questions, however due to the group being busy with other classes, I continued my work, taking the collective silence as agreement.
+The awkward label is due to the unique circumstances regarding my own contributions. I do not wish to blame my group for the final result, only that I get evaluated on the effort I put into the project. I split this description into four phases: the work that has been represented within the game itself, the work I did, the work I did...again, and the descrepency between them.
+**The work represented in the game**
+
+Code for the dialogue I did.
+ 
+Mission 1 Dialogue - https://github.com/Konsing/ECS-179-Final-Project/blob/18c2420411d5870f3837934bc36b88224158934b/PunchHell/Assets/Scripts/PunchHell/StageDefinitions.cs#L33
+
+Mission 2 Dialogue - https://github.com/Konsing/ECS-179-Final-Project/blob/18c2420411d5870f3837934bc36b88224158934b/PunchHell/Assets/Scripts/PunchHell/StageDefinitions.cs#L84
+
+Mission 3 Dialogue - https://github.com/Konsing/ECS-179-Final-Project/blob/18c2420411d5870f3837934bc36b88224158934b/PunchHell/Assets/Scripts/PunchHell/StageDefinitions.cs#L125
+
+Mission 4 Dialogue - https://github.com/Konsing/ECS-179-Final-Project/blob/18c2420411d5870f3837934bc36b88224158934b/PunchHell/Assets/Scripts/PunchHell/StageDefinitions.cs#L161
+
+Mission 5 Dialogue - https://github.com/Konsing/ECS-179-Final-Project/blob/18c2420411d5870f3837934bc36b88224158934b/PunchHell/Assets/Scripts/PunchHell/StageDefinitions.cs#L174
+
+Mission 6 Dialogue - https://github.com/Konsing/ECS-179-Final-Project/blob/18c2420411d5870f3837934bc36b88224158934b/PunchHell/Assets/Scripts/PunchHell/StageDefinitions.cs#L189
+
+The abstract elements are mainly menus, Gameplay UI Examples, Dialogue exchange Design, Buttons, Player Sprite
+
+Directory containing description and or examples of each abstract element:
+
+Menus - https://github.com/Konsing/ECS-179-Final-Project/tree/main/PunchHell/Documents/Menus
+
+Gameplay UI Examples - https://github.com/Konsing/ECS-179-Final-Project/tree/main/PunchHell/Documents/Gameplay%20UI%20examples
+
+Dialogue Exchange Design - https://github.com/Konsing/ECS-179-Final-Project/tree/main/PunchHell/Documents/Dialogue%20Exchange%20Design
+
+Buttons - https://github.com/Konsing/ECS-179-Final-Project/tree/main/PunchHell/Documents/Buttons
+
+Player Sprite - https://github.com/Konsing/ECS-179-Final-Project/tree/main/PunchHell/Documents/Player
+
+
+**The work I did (excluding the above)**
+The group initially decided on a bullethell/light novel format for the game, with heavy emphasis on the variety of enemies, level design, and story. As the gameplay designer, I designed different enemies, attack patterns, level designs, abilities, menus, sprites, menus, and just about every aspect of the game itself on my own. I included video examples from other similar games to reference, sprites, examples of the backgrounds, how I wanted the font to look like, the general theme for visual design and audio queues. I frequently asked for questions regarding feedback and questions, however due to the group being busy with other classes, I continued my work, taking the collective silence as agreement.
+
 Here are a few examples of my early designs:
 
 Rough sketch of the story - https://github.com/Konsing/ECS-179-Final-Project/blob/main/Documents/Story.pdf
@@ -193,27 +227,46 @@ Initial story document containing level designs - https://docs.google.com/docume
 
 Initial enemy design and projectile patterns - https://github.com/Konsing/ECS-179-Final-Project/blob/main/Documents/MechanicsDraft/Boss%20and%20Enemy%20Variants.pdf
 
-I made a guide for the group to build the framework of the game in case their silence meant they had no direction - https://docs.google.com/document/d/1RliyboyAL2Pkde6kl9ltIv3SLjySaK0Jqm7ZtEzv4bo/edit?usp=sharing
+I made a guide for the group to build the framework of the game - https://docs.google.com/document/d/1RliyboyAL2Pkde6kl9ltIv3SLjySaK0Jqm7ZtEzv4bo/edit?usp=sharing
 
-![](./ExampleImages/heart_drawing.png) 
+Asking for feedback and questions - https://github.com/Konsing/ECS-179-Final-Project/blob/main/PunchHell/Documents/Evidence%20of%20Producer%20role/Screenshot%202024-03-22%20142955.png
 
-Unfortunately, by the time the group had finished with other classes, the depth of the game became too overwhelming to handle within the remaining timeframe. Due to many sudden complaints of misunderstanding and miscommunication, I reworked the game from the ground up with much more simplicity. I contributed a lot more to other roles in reworking the game, including sprite design, UI, and producer.
+Needless to say, the initial conception of almost every aspect of the game (except the decision on the genre and theme of the game) came from me. I also acted as the producer in this initial state, contacting and representing my group during peer review.
 
-Simpiler story - https://github.com/Konsing/ECS-179-Final-Project/blob/main/Documents/FinalStory.txt
+Discord message - https://github.com/Konsing/ECS-179-Final-Project/blob/main/PunchHell/Documents/Evidence%20of%20Producer%20role/Screenshot%202024-03-22%20143018.png
 
-Simple ability - 
+Ultimately, many features were either not implemented or only only partially implemented. Here is a list of a few of them (others can be found in the directory: https://github.com/Konsing/ECS-179-Final-Project/tree/main/PunchHell/Documents)
+-The 10,000 word plot and gameplay design
+-the stages of implementation
+-Enemy and boss designs
+-level designs
+-player abilities
+-projectile mechanics
+-sound designs
+-background style
+-Mission UI format
 
-Simple level design - 
+**Work I did...again**
+Unfortunately, by the time the group had finished with other classes, the depth of the game became too overwhelming to handle within the remaining timeframe. Due to many sudden complaints of misunderstanding and miscommunication, I reworked the game from the ground up with more simplicity. I contributed a lot more to other roles in reworking the game, including sprite design and UI. Again, most of my unused designs and descriptions are found within any folder within the Documents Directory.
 
+Simpiler story - https://github.com/Konsing/ECS-179-Final-Project/tree/main/PunchHell/Documents/Plot
 
-Still, the group became bogged down to the point we had to rely on a framework for the game to operate. Unfortunately, due to the constraints of the library, many ideas, designs, and work was once again unfulfilled. In fact, new mechanics which the framework supported replaced my own designs. For example the "Graze" ability was never discussed, yet was implemented due to necessetating some sort of player ability to help navigate the rain of bullets. In order to make a complete game on time, gameplay design was sacrificed in order to cobble together whatever the library could handle. Dan Le, Ahmed, and Konsing salvaged what they could from the library. Due to the lateness and how busy I was with other tasks, having put them off due to working on gameplay, I could only work on the dialogue code.
-Enemy design - [ECS-179-Final-Project/Documents/MechanicsDraft/Boss and Enemy Variants.pdf](https://github.com/Konsing/ECS-179-Final-Project/blob/main/Documents/MechanicsDraft/Boss%20and%20Enemy%20Variants.pdf)
+Example sprites - https://github.com/Konsing/ECS-179-Final-Project/tree/main/PunchHell/Documents/Enemies
 
+Game mechanics similar to my own designs (for example) - https://github.com/Konsing/ECS-179-Final-Project/blob/main/PunchHell/Documents/Enemies/Bosses/Pinwheel%20attack.mp4
 
+Simple level design - https://github.com/Konsing/ECS-179-Final-Project/tree/main/PunchHell/Documents/Mission%20Level%20Design
 
+Background images - https://github.com/Konsing/ECS-179-Final-Project/blob/main/PunchHell/Documents/Menus/background%20example.png
 
+Health - ![](./ExampleImages/heart_drawing.png) 
 
+Projectile image - https://github.com/Konsing/ECS-179-Final-Project/blob/main/PunchHell/Documents/Projectiles%20and%20Projectile%20Mechanics/Normal/Screenshot%202024-03-10%20212822.png
 
+asking for more feedback - https://github.com/Konsing/ECS-179-Final-Project/blob/main/PunchHell/Documents/Evidence%20of%20Producer%20role/Screenshot%202024-03-22%20143106.png
+
+**Why other gameplay Mechanics were implemented (The descrepency between design and implementation)**
+The group began coding within 48 hours of submission, and failed to implement my remade designs, ideas, and work due to relying on an inflexible framework for bullethells: "Danmaku". Dan Le, Ahmed, and Konsing were eseentially cornered, and cobbled together what little mechanics the Danmaku framework/library supported regardless of my designs. To their credit, they did try to implement as much as my ideas and designs as they could, but the time constraint really hampered progress. I was only made aware of this fact 30 minutes before the demonstration, hence why my own contribution seems to pale in comparison.
 
 # Sub-Roles
 
