@@ -284,6 +284,7 @@ The group began coding within too short a time before submission, and failed to 
 We found feedback to be surprisngly positive, with many people unfamiliar with the bullet hell genre and intrigued by its mechanics and chaotic looking screen. The main takeaway that our team found from the playtesters was that our game was hard. Very hard. That does make sense since our game was designed to be a bullet hell, a genre known for its unforgiving nature and its trial and error approach. However, we felt that if our game was too hard then it would not be very approachable and would lessen the desire to replay. Thus we decided to make the first two levels easier in order to encourage beginners to keep playing and feel a sense of progress. Another thing we noticed was that peopel often did not notice when they got hurt, so we decided to make that more obvious. Lastly, we had to explain the game mechanics in person, as our game was not as intuitive as we had hoped. Therefore we added a short but informative "how to play" tutorial at the beginning of the game.
 
 
+
 ## Narrative Design
 
 **Document how the narrative is present in the game via assets, gameplay systems, and gameplay.**
@@ -296,7 +297,7 @@ The initial sketch of the plot - https://github.com/Konsing/ECS-179-Final-Projec
 
 near-final draft - https://docs.google.com/document/d/1p2P99ieAFLnA-otmrhpaOJq8ouLhLcdBULgW5sqo8cI/edit?usp=sharing
 
-**The final implementation of the story**
+**The final design of the story**
 
 Massively simplifying the story, the narrative now closely follows the theme of rolling with the punches with the main character Jose. Jose is a janitor working for the big bad evil guy, Boss Boss, until one day he gets an unexpected promotion. He is now commander of an entire army of boxer robots, the only problem being that he immediately loses control of all of them when the boss spills coffee on the way out of the office. Unbeknownst to the entire organization, Jose is assaulted by the robot army. Just as Jose thinks he can get some respit, the company take notice of him. Being a relatively unknown element within the company, the staff assault him alongside the robots. Once again, he proves to be triumphant until Boss Boss returns and tries to kill him. Jose proves victorious. He is tired. He wants to go home. Suddenly the person who was originally supposed to stand against the big bad evil guy shows up and they duke it out. Jose once again wins!
 
@@ -317,6 +318,22 @@ You really FEEL like you're getting assaulted by an army of robots - https://git
 Projectiles are shaped like punches because Jose, the main character, is fighting for his life - https://github.com/Konsing/ECS-179-Final-Project/blob/main/PunchHell/Documents/Screenshot%202024-03-22%20160300.png
 
 By being the gameplay designer and narrative designer it allowed me to essentially take full creative responsibility for the style and design which had a nice synergy, hence why I was able to collaborate with other memebers so well to keep the narrative so consistent.
+
+
+**Final Implementation of the story**
+Each mission contains a Dialogue canvas with a DialogueText, DialogueName, and DialogueSounds. If there is another dialogue segement after the user presses the mouse button, the dialogue changes to the next set of DialogueText, DialogueName, and DialogueSounds, if there exists more to show. If there are no more dialogue segments to show, the mission starts.
+
+Font is Tektur-Regular (font) size 16
+
+The name, DialogueName, is bold and size 32 to differentiate the name from the text a bit.
+
+**Tutorial**
+
+In addition to the plot segments in mission 1, I also added a tutorial segment introducing the basic layout to the player such as which buttons do what, the objective, etc.
+
+
+
+
 
 
 
