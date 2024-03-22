@@ -1,0 +1,25 @@
+"Another mission another ability! (the last one this time I promise)"
+"Here is your new rage bar."
+"When full, double click [button] and unleash a barage of projectiles"
+"it naturally recharges, but much slower than focus. Use it in a pinch"
+"Good luck!"
+
+
+MISSION STARTS
+Start the timer.
+Mission length = 120 seconds
+Basic enemy time interval (time to spawn and despawn enemy when they leave the screen): 7
+Trident enemy time interval (time to spawn and despawn enemy when they leave the screen): 7
+Homing enemy time interval (time to spawn and despawn enemy when they leave the screen): 7
+Laser enemy time interval (time to spawn and despawn enemy when they leave the screen): 7
+Bomber enemy time interval (time to spawn and despawn enemy when they leave the screen): 7
+
+
+Spawn 3 laser enemies at left, right, and middle of the screen.
+
+After enough time has passed where they could leave the screen (regardless if they are destroyed), spawn 3 Bombers at the same locations
+
+Spawn laser units at locations 1-5, 7-12, 14-17 with bombers between them. The ideal is that the player should feel the fear of god unless they blow up all those units using the bombers.
+
+Spawn a random mix of 5 enemies at once. Increase enemy count by 1 for every 10 seconds that pass.
+After 120 seconds, show victory screen. If the player dies, show the death screen.

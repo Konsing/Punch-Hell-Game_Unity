@@ -1,0 +1,21 @@
+TO THE DESIGNERS:
+
+"It's getting intense."
+"Here is your new focus bar."
+"hold down [button] to slow down time while the bar has juice"
+"it naturally recharges so use it when you're in a pinch."
+"Good luck!"
+
+
+MISSION STARTS
+Start the timer.
+Mission length = 120 seconds
+Basic enemy time interval (time to spawn and despawn enemy when they leave the screen): 7
+Trident enemy time interval (time to spawn and despawn enemy when they leave the screen): 7
+Homing enemy time interval (time to spawn and despawn enemy when they leave the screen): 7
+
+Spawn 3 homing enemies at left, right, and middle of the screen.
+After enough time has passed where they could leave the screen (regardless if they are destroyed), spawn 3 tridents at the same locations
+Repeat this combination one more time at random locations.
+Spawn a random mix of 5 enemies at once. Increase enemy count by 1 for every 10 seconds that pass.
+After 120 seconds, show victory screen. If the player dies, show the death screen.

@@ -1,0 +1,26 @@
+TO THE DESIGNERS:
+This mission, among others, may open up with certain messages. They appear as text in the middle of the screen. Fade the text in and fade the text out after an appropriate amount of time has passed for the player to be able to read it. After all messages have played, start the level and the timer.
+
+
+"Welcome to PunchHell!"
+"Here is your health" (point to hearts)
+"here is the timer. Missions usually last anywhere from 2-3 minutes" (point to timer)
+"here are your bombs. Press [button] to detonate them, destroying all projectiles and damaging enemies around the player, but use them sparingly. You only have a limited amount!"
+"use WASD to move around"
+"Press space to roll through the punches. It will be your lifeline to live."
+"Good luck!"
+
+
+MISSION STARTS
+Start the timer.
+Mission length = 120 seconds
+Basic enemy time interval (time to spawn and despawn enemy when they leave the screen): 7
+Trident enemy time interval (time to spawn and despawn enemy when they leave the screen): 7
+
+Spawn 3 basic enemies at left, right, and middle of the screen.
+After enough time has passed where they could leave the screen (regardless if they are destroyed), spawn 3 tridents at the same locations
+Repeat this combination one more time at random locations.
+Spawn a random mix of 5 enemies at once. Increase enemy count by 1 for every 10 seconds that pass.
+
+
+After 120 seconds, show victory screen. If the player dies, show the death screen.

@@ -1,0 +1,13 @@
+Should be the typical boss description.
+Health: 750
+Randomly use attack patterns every 5 seconds.
+Use large projectiles
+Increase the projectile count for shotgun bursts, gateling frequency, lasercount, etc. by 1
+
+New attack!
+Fires a burst of 4 homing projectiles over the course of 0.5 seconds, meaning player has to dodge forwards through them. If they try to go left or right the projectiles have enough time to shift and damage the player.
+
+
+Explode the sprite when it dies
+
+Finish the mission!

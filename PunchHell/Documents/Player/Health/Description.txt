@@ -1,0 +1,7 @@
+Depending on Difficulty, more of a heart gets emptied when damaged.
+
+Also the player will appear more damaged when losing hearts.
+
+3 hearts to start off with.
+
+Take away red portion of heart like in Legend of Zelda games when hurt and flash red on the screen.

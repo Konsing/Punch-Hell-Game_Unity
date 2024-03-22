@@ -1,0 +1,14 @@
+-Damage
+-Button Select Click noise
+-Fire projectile
+-Fire homing projectile
+-focus mode
+-Hero is talking
+-protagonist is talking
+-Boss is talking
+-General is talking
+-Security guard is talking
+-Robot is typing
+-Rage mode is active
+-Bomb detonates
+-laser

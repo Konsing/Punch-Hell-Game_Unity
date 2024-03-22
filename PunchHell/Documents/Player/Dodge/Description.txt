@@ -1,0 +1,9 @@
+Dodge through projectiles with invincibility frames! 
+Projectiles should pass through player during this time
+Dodge should be a small burst of speed in a certain direction. Default is upwards
+
+
+Frames: 12
+Speed of dodge: 1.5 playerspeed
+speed after dodge: playerspeed
+Interval before player can dodge again: 0.5 seconds

@@ -1,0 +1,11 @@
+Flies from top of the screen to the bottom of the screen while firing three basic projectile bursts. The middle projectile should accurately fire towards the player while the other two should be off by several degrees.
+
+degree of error: 5
+
+
+Health: 13
+
+Speed: 1/2 player speed
+
+Projectiles fire at basic projectile chargeTime intervals
+

@@ -1,0 +1,9 @@
+Flies to 1/3 from the top of the screen and remain there, charging and firing lasers according to the description of laser projectiles.
+
+
+Health: 20
+
+Speed: player speed // cameraspeed when reached 1/3 from the top of the screen to remain at constant positon.
+
+Projectiles fire according to laser projectiles.
+

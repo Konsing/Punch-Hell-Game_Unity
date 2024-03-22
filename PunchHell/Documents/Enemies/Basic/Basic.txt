@@ -1,0 +1,9 @@
+Flies from top of the screen to the bottom of the screen while firing basic projectiles. Projectiles are not targeted at the player. They only shoot downwards as they fly.
+
+
+Health: 3
+
+Speed: 1/4 player speed
+
+Projectiles fire at basic projectile chargeTime intervals
+

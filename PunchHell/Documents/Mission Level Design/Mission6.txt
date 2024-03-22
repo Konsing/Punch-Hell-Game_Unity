@@ -1,0 +1,17 @@
+This final level will be unhinged.
+
+For 120 seconds, spawn units. Start slow.
+Units should have double health and deal double damage. They and their projectiles move at 1.2 speed. They should be surrounded in a purple glow.
+
+Only basics for the first 21 seconds. random amounts from 10-15 every 7 seconds
+
+Basics and tridents next. random amounts from 5-10 every 5 seconds.
+
+Throw everything. Every second something should spawn at a random location. This goes on for 120 seconds.
+
+Suddenly have a calm. No more enemies spawn. The music should change. 10 seconds of tension, and then the boss spawns.
+
+The boss will slowly move into the screen.
+The boss healthbar and name should be at the top of the screen much like in Souls-like games
+The mission only ends after the boss has been killed and the explosion animation finishes.
+Victory screen should direct the player elsewhere
