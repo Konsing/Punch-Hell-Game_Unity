@@ -29,6 +29,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private int scoreAddedByGraze = 1;
 
+    [Header("Audio")]
+    [SerializeField] private AudioClip hitSound;
+    [SerializeField] private AudioClip deathSound;
+    private AudioSource audioSource;
+
     private PlayerDanmakuEmitter[] bulletEmitters;
     private SpriteRenderer[] sprites;
     private Transform rollSprite;
@@ -82,6 +87,20 @@ public class PlayerController : MonoBehaviour
             transform.Find($"Turret {i}").gameObject.SetActive(count >= i);
     }
 
+    private void ResetPlayerState()
+    {
+        invincibilityRemaining = 0.0f;
+        if (audioSource.isPlaying)
+        {
+            audioSource.Stop();
+        }
+    }
+
+    void OnEnable()
+    {
+        ResetPlayerState();  // Add this line
+    }
+
     void Start()
     {
         Instance = this;
@@ -89,6 +108,10 @@ public class PlayerController : MonoBehaviour
         rollSprite = transform.Find("RollPipe");
         bulletEmitters = GetComponentsInChildren<PlayerDanmakuEmitter>(true);
         sprites = GetComponentsInChildren<SpriteRenderer>(true);
+
+        audioSource = GetComponent<AudioSource>();
+
+        ResetPlayerState();
     }
 
     void Update()
@@ -140,12 +163,31 @@ public class PlayerController : MonoBehaviour
             else
                 emitter.DisableFiring();
         }
+
+        if (invincibilityRemaining > 0)
+        {
+            if (!audioSource.isPlaying)
+            {
+                audioSource.clip = hitSound;
+                audioSource.loop = true;
+                audioSource.Play();
+            }
+        }
+        else
+        {
+            if (audioSource.isPlaying && audioSource.clip == hitSound)
+            {
+                audioSource.Stop();
+            }
+        }
     }
 
     void Die()
     {
         StageManager.Instance.LivesRemaining -= 1;
         invincibilityRemaining = invincibilityTimeAfterDeath;
+
+        audioSource.PlayOneShot(deathSound);
     }
 
     public void OnDanmakuCollision(Danmaku bullet)
