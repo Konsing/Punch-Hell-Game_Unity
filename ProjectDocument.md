@@ -33,7 +33,7 @@ The player is able to move with directional keys as input. That is, movement is 
 
 And as in many other bullet hell games, there are also gameplay elements which change how the player moves and interacts with the game. These gameplay elements, and their corresponding input keys, are enumerated as follows:
 
-- *Player Shoot*; Input: Fire1/LClick. The player can fire projectiles from a turret. There can be multiple turrets, as later described in the Score section. Player bullets damage enemy units, which have a limited amount of health.
+- *Player Shoot*; Input: Fire1/LClick. The player can fire projectiles from a turret. There can be multiple turrets, as later described in the Score section. Player bullets damage enemy units, which have a limited amount of health. There is also a subtle turret sound that you can hear every time you fire.
 
 - *Score*. A score counter is displayed on the bottom left corner of the screen, and increases under the following conditions: an enemy is killed (and subsequently having their on-screen bullets converted to a point drop), a bullet is grazed, a blue point drop is collected.
 
@@ -362,7 +362,127 @@ To ensure players could personalize their audio experience, I implemented volume
 
 ![](./Documents/KonsingImages/Volume%20TogglesSliders.png) 
 
-Additionally, the sound effects player script was designed to manage three distinct button sounds in the main menu, ensuring that each interaction felt responsive and satisfying. The VolumeSettings script, on the other hand, managed all the audio toggles and sliders, offering players a comprehensive control over their audio experience. Changes were also made to the StageManager.cs script to facilitate the transition between songs as players progressed through levels. An issue initially arose where the music would only play when selecting 'restart' or 'new game,' but this was rectified by updating the method in the StageManager script, ensuring that music would play correctly from the beginning of each session. The stagemanager contains a list that holds all 6 tracks and changes between them depending on the level.
+Additionally, the sound effects player script was designed to manage three distinct button sounds in the main menu, ensuring that each interaction felt responsive and satisfying. The VolumeSettings script, on the other hand, managed all the audio toggles and sliders, offering players a comprehensive control over their audio experience. Changes were also made to the StageManager.cs script to facilitate the transition between songs as players progressed through levels, and PlayerController.cs for the player projectile turret sounds. In the code below, you can see much of the code that was needed for the audio sources and projectiles to work together.
+
+```
+    void Start()
+    {
+        Instance = this;
+
+        rollSprite = transform.Find("RollPipe");
+        bulletEmitters = GetComponentsInChildren<PlayerDanmakuEmitter>(true);
+        sprites = GetComponentsInChildren<SpriteRenderer>(true);
+
+        audioSource = GetComponent<AudioSource>();
+
+        ResetPlayerState();
+    }
+
+    void Update()
+    {
+        // Shooting logic and sound management
+        bool isShooting = Input.GetButton("Fire1");
+        if (isShooting && !StageManager.Instance.DialogueActive) // Check if shooting and not in dialogue
+        {
+            if (!shootingAudioSource.isPlaying)
+                shootingAudioSource.Play();
+
+            foreach (var emitter in bulletEmitters)
+                emitter.EnableFiring();
+        }
+        else
+        {
+            if (shootingAudioSource.isPlaying)
+                shootingAudioSource.Stop();
+
+            foreach (var emitter in bulletEmitters)
+                emitter.DisableFiring();
+        }
+        
+        if (Input.GetKeyDown(KeyCode.Escape) && !StageManager.Instance.DialogueActive)
+            StageManager.Instance.Paused = !StageManager.Instance.Paused;
+
+        if (Input.GetKeyDown(KeyCode.Space) && StageManager.Instance.RollLevel >= 100)
+        {
+            StageManager.Instance.AddRoll(-StageManager.Instance.RollLevel);
+            rollTimeRemaining = rollTimeMax;
+
+            rollAudioSource.Play();  // Play the roll sound
+        }
+
+        if (rollTimeRemaining <= 0.0f)
+        {
+            // Stop the roll sound effect if it's playing
+            if (rollAudioSource.isPlaying)
+            {
+                rollAudioSource.Stop();  // Stop the roll sound
+            }
+
+            transform.rotation = new Quaternion(0, 0, 0, 0);
+            rollSprite.gameObject.SetActive(false);
+        }
+        else
+        {
+            Debug.Log((rollTimeMax - rollTimeRemaining) / rollTimeMax);
+            transform.Rotate(new Vector3(0, 0, 360 / rollTimeMax * Time.deltaTime));
+            rollSprite.gameObject.SetActive(true);
+        }
+
+        rollTimeRemaining = Mathf.Max(0.0f, rollTimeRemaining -= Time.deltaTime);
+        invincibilityRemaining = Mathf.Max(0.0f, invincibilityRemaining -= Time.deltaTime);
+
+        var slowMove = Input.GetButton("Fire2");
+
+        transform.Find("Hitbox").GetComponent<SpriteRenderer>().enabled = slowMove;
+
+        var speed = slowMove ? slowMoveSpeed : (rollTimeRemaining > 0.0f ? rollMoveSpeed : moveSpeed);
+
+        Vector3 movement = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0).normalized;
+        gameObject.transform.position += movement * speed * Time.deltaTime;
+
+        var cameraBounds = Camera.main.OrthographicBounds();
+
+        gameObject.transform.position = new Vector3(
+            Mathf.Clamp(transform.position.x, cameraBounds.min.x, cameraBounds.max.x),
+            Mathf.Clamp(transform.position.y, cameraBounds.min.y, cameraBounds.max.y),
+            transform.position.z);
+
+        foreach (var emitter in bulletEmitters)
+        {
+            if (Input.GetButton("Fire1"))
+                emitter.EnableFiring();
+            else
+                emitter.DisableFiring();
+        }
+
+        if (invincibilityRemaining > 0)
+        {
+            if (!audioSource.isPlaying)
+            {
+                audioSource.clip = hitSound;
+                audioSource.loop = true;
+                audioSource.Play();
+            }
+        }
+        else
+        {
+            if (audioSource.isPlaying && audioSource.clip == hitSound)
+            {
+                audioSource.Stop();
+            }
+        }
+    }
+
+    void Die()
+    {
+        StageManager.Instance.LivesRemaining -= 1;
+        invincibilityRemaining = invincibilityTimeAfterDeath;
+
+        audioSource.PlayOneShot(deathSound);
+    }
+```
+
+An issue initially arose where the music would only play when selecting 'restart' or 'new game,' but this was rectified by updating the method in the StageManager script, ensuring that music would play correctly from the beginning of each session. The stagemanager contains a list that holds all 6 tracks and changes between them depending on the level. Here are a few screenshots from these audio sources.
 
 ![](./Documents/KonsingImages/Screenshot%202024-03-22%20155858.png) ![](./Documents/KonsingImages/Screenshot%202024-03-22%20155910.png) 
 
