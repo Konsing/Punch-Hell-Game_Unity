@@ -41,11 +41,11 @@ And as in many other bullet hell games, there are also gameplay elements which c
 
 - *Precise Movement*; Input: Fire2/RClick. At normal player movement speed, macro dodging of bullets is easy. However, when patterns start becoming complex and there is less space to dodge, the player can switch to slow movement mode with the Fire2 input. In slow movement mode, the character's movement speed slows and a precise hitbox is shown to facilitate micro doging.
 
-- *Life*. The player has a fixed number of lives, which are lost if the player comes into contact with bullets. If there are no lives remaining, then the game ends and the player is forced to restart or quit the game. After death, a short period of invincibility is granted to the player to prevent chain deaths.
+- *Life*. The player has a fixed number of lives, which are lost if the player comes into contact with bullets. If there are no lives remaining, then the game ends and the player is forced to restart or quit the game. After death, a short period of invincibility is granted to the player to prevent chain deaths. Every time the player is hit, a Oof can be heard and a scream duration will indicate that the player is in god mode for its duration.
 
 - *Graze*. When doging bullets, there are two hitboxes that a bullet could come into contact with: the core hitbox, which kills the player if touching a bullet, and the graze hitbox, which adds to the player's score for every bullet that remains in contact with it. Coming close to bullets in such a fashion is known as "grazing," and in this game also fills up the Roll Meter which is described subsequently.
 
-- *Roll*; Input: SPACE. The player's character can "Roll" and gain a short period of invincibility and increased movement speed. The player can only roll when the Roll Meter, displayed as a white bar on the HUD, is full. The Roll Meter fills through grazing bullets.
+- *Roll*; Input: SPACE. The player's character can "Roll" and gain a short period of invincibility and increased movement speed. The player can only roll when the Roll Meter, displayed as a white bar on the HUD, is full. The Roll Meter fills through grazing bullets. The roll is paired with a sound effect that lets you know you are invincible during its duration.
 
 
 **Add it here if you did work that should be factored into your grade but does not fit easily into the proscribed roles! Please include links to resources and descriptions of game-related material that does not fit into roles here.**
@@ -358,7 +358,7 @@ In my role focusing on the game's audio, I curated a selection of sound effects 
 
 ![](./Documents/KonsingImages/Sounds.png) 
 
-To ensure players could personalize their audio experience, I implemented volume sliders and toggles for the music and sound effects, which were integrated into the game through the VolumeSettings.cs script. This script was connected to a sound mixer named Main, which was tied to every sound game object source within the game. This setup meant that adjusting the sliders for SFX or Music dynamically altered the audio levels across all levels and even the title screen, providing a seamless and consistent experience.
+To ensure players could personalize their audio experience, I implemented volume sliders and toggles for the music and sound effects, which were integrated into the game through the VolumeSettings.cs script. This script was connected to a sound mixer named Main, which was tied to every sound game object source within the game. This setup meant that adjusting the sliders for SFX or Music dynamically altered the audio levels across all levels and even the title screen, providing a seamless and consistent experience. This includes SFX such as button presses, player hit, player invincibility after hit duration, roll mechanic sounds, and Game Over/Game Victory SFX.
 
 ![](./Documents/KonsingImages/Volume%20TogglesSliders.png) 
 
