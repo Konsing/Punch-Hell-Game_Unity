@@ -169,7 +169,26 @@ Due to the simplicity of the shoot-em up, we had very little animation, and what
 
 ![](PunchHell/Assets/Resources/Sprites/Laser_low_strength.png) ![](PunchHell/Assets/Resources/Sprites/Laser_half_strength.png) ![](PunchHell/Assets/Resources/Sprites/Laser_full_strength.png)
 
-In terms of coding the visuals the main thing I did was try to create changing backgrounds based on the state of the game. Originally we had a black screen which we found to be boring. So we wanted the background to change based on When there is a story/dialogue segment we planned for the background to change according to the plot. 
+In terms of coding the visuals the main thing I did was try to create changing backgrounds based on the state of the game. Originally we had a black screen which we found to be boring. So we wanted the background to change based on When there is a story/dialogue segment we planned for the background to change according to the plot. Some problems I ran into was the fact that the dialogue cutscenes are made up of a [list of stage actions](https://github.com/Konsing/ECS-179-Final-Project/blob/b9cfea731508f81643b75b976a47c43e6dd59c0c/PunchHell/Assets/Scripts/PunchHell/StageDefinitions.cs#L35). Therefore if I wanted to create a scene change it needed to also be a stage action. While I did end up creating a scene changing class:
+
+`public class StageActionSetBackground : StageAction
+{
+    public GameObject shownBackground;
+    public GameObject hidden1;
+    public GameObject hidden2;
+    public StageActionSetBackground(GameObject shownBackground, GameObject hidden1, GameObject hidden2)
+    {
+        this.shownBackground = shownBackground;
+        this.hidden1 = hidden1;
+        this.hidden2 = hidden2;
+        this.shownBackground.SetActive(true);
+        this.hidden1.SetActive(false);
+        this.hidden2.SetActive(false);
+    }
+}`
+
+Ultimately it got scrapped due to time constraints and was not transitioning the backgrounds properly. However serendipitously we did get the backgrounds to change randomly for each level, creating a sense of variety. 
+
 ## Game Logic
 
 **Document the game states and game data you managed and the design patterns you used to complete your task.**
