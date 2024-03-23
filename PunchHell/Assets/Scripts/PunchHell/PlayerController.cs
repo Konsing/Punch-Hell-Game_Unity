@@ -34,6 +34,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AudioClip deathSound;
     private AudioSource audioSource;
 
+    [SerializeField] private AudioSource rollAudioSource;
+
     private PlayerDanmakuEmitter[] bulletEmitters;
     private SpriteRenderer[] sprites;
     private Transform rollSprite;
@@ -123,10 +125,18 @@ public class PlayerController : MonoBehaviour
         {
             StageManager.Instance.AddRoll(-StageManager.Instance.RollLevel);
             rollTimeRemaining = rollTimeMax;
+
+            rollAudioSource.Play();  // Play the roll sound
         }
 
         if (rollTimeRemaining <= 0.0f)
         {
+            // Stop the roll sound effect if it's playing
+            if (rollAudioSource.isPlaying)
+            {
+                rollAudioSource.Stop();  // Stop the roll sound
+            }
+
             transform.rotation = new Quaternion(0, 0, 0, 0);
             rollSprite.gameObject.SetActive(false);
         }
