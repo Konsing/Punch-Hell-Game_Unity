@@ -407,7 +407,17 @@ In addition to the plot segments in mission 1, I also added a tutorial segment i
 
 **Include links to your presskit materials and trailer.**
 
+Press Kit: 
+
+https://extraconcentratedjuice.github.io/PunchHellPressKit
+
+Trailer:
+
+https://github.com/ExtraConcentratedJuice/PunchHellPressKit/blob/master/punchhell.mp4
+
 **Describe how you showcased your work. How did you choose what to show in the trailer? Why did you choose your screenshots?**
+
+I used some of the game's assets to create an HTML website that uses 3 different fullscreen sections to showcase the case. The first section includes title, subtitle, and video trailer. The second one is a brief section related to what the game is and some stuff about the story. The third section is essentially a credit screen. The trailer consists of gameplay, which I chose because it's what best representative of the game, unlike those games on Steam that have cool-looking screenshots and trailers that barely resemble the gameplay. I did not include screenshots because the video essentially showcases the game and bullet hells are fast paced so a screenshot would do it no justice.
 
 ## Game Feel and Polish
 
