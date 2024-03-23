@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
     private AudioSource audioSource;
 
     [SerializeField] private AudioSource rollAudioSource;
+    [SerializeField] private AudioSource shootingAudioSource;
 
     private PlayerDanmakuEmitter[] bulletEmitters;
     private SpriteRenderer[] sprites;
@@ -118,6 +119,25 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        // Shooting logic and sound management
+        bool isShooting = Input.GetButton("Fire1");
+        if (isShooting && !StageManager.Instance.DialogueActive) // Check if shooting and not in dialogue
+        {
+            if (!shootingAudioSource.isPlaying)
+                shootingAudioSource.Play();
+
+            foreach (var emitter in bulletEmitters)
+                emitter.EnableFiring();
+        }
+        else
+        {
+            if (shootingAudioSource.isPlaying)
+                shootingAudioSource.Stop();
+
+            foreach (var emitter in bulletEmitters)
+                emitter.DisableFiring();
+        }
+        
         if (Input.GetKeyDown(KeyCode.Escape) && !StageManager.Instance.DialogueActive)
             StageManager.Instance.Paused = !StageManager.Instance.Paused;
 
