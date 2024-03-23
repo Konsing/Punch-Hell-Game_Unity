@@ -12,11 +12,15 @@ public class DialogueBoxController : MonoBehaviour
 
     public void SetName(string name)
     {
-        transform.Find("DialogueName").GetComponent<Text>().text = name;
+        Text dialogueName = transform.Find("DialogueName").GetComponent<Text>();
+        dialogueName.text = name;
+        dialogueName.color = Color.yellow;
     }
 
     public void SetText(string text)
     {
-        transform.Find("DialogueText").GetComponent<Text>().text = text;
+        Text dialogueText = transform.Find("DialogueText").GetComponent<Text>();
+        dialogueText.text = text;
+        dialogueText.color = Color.white;
     }
 }
