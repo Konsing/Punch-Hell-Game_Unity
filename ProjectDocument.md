@@ -6,7 +6,7 @@ PunchHell is a Touhou-style Danmaku (bullet hell) game, also known as a "shoot e
 
 ## Project Resources
 
-[Web-playable version of your game.](https://itch.io/)  
+[Web-playable version of your game.](https://extraconcentratedjuice.itch.io/punchhell)  
 
 
 [Trailor](https://extraconcentratedjuice.github.io/PunchHellPressKit/punchhell.mp4)  
