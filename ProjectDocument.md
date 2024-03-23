@@ -191,6 +191,13 @@ public class StageActionSetBackground : StageAction
 
 Ultimately it got scrapped due to time constraints and was not transitioning the backgrounds properly. However serendipitously we did get the backgrounds to change randomly for each level, creating a sense of variety. 
 
+I also changed the dialogue boxes since I felt that it felt too bland and I wanted to make the boxes transparent so the player could see more of the background.
+
+![](ExampleImages/old_dialogue.png)
+
+I replaced the dialogue box with a better, more transparent color and also changed the text color to make it easier to read. I also [changed the text colors](https://github.com/Konsing/ECS-179-Final-Project/blob/63b9e65665dd5503fc1acc16574fd3418e182ffc/PunchHell/Assets/Scripts/PunchHell/DialogueBoxController.cs#L17) so there was a difference between the name of the person speaking versus what they were saying, in order to make it easier for the player to see who was talking.
+
+![](ExampleImages/fixed dialogue.png)
 ## Game Logic
 
 **Document the game states and game data you managed and the design patterns you used to complete your task.**
